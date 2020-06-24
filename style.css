@@ -1,0 +1,593 @@
+*{
+	box-sizing: border-box;
+}
+
+body {
+	display: grid;
+	grid-template-columns: 4cm 15cm 4cm;
+	grid-template-rows: 5cm 5cm 5cm 5cm;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Press Start 2P', serif;
+}
+
+.tablero {
+	height: 15cm;
+	width: 15cm;
+	grid-column: 2 / 2;
+	grid-row: 1 / 4;
+	display: grid;
+	grid-template-columns: 1cm 1cm 1cm 1cm 1cm 1cm 1cm 1cm 1cm 1cm 1cm 1cm 1cm 1cm 1cm;
+	grid-template-rows: 1cm 1cm 1cm 1cm 1cm 1cm 1cm 1cm 1cm 1cm 1cm 1cm 1cm 1cm 1cm;
+	grid-gap: 0px;
+	justify-content: center;
+
+}
+
+.esquina {
+	height: 6cm;
+	width:6cm;
+	border-style: solid;
+}
+
+#esquina_amarilla {
+	border-color: yellow;
+	border-width: 1cm;
+	border-radius: 20px 0px 0px 0px;
+	grid-column: 1 / 7;
+	grid-row: 1 / 7;
+	display: grid;
+	grid-template-columns: 2cm 2cm;
+	grid-template-rows: 2cm 2cm;
+	justify-content: center;
+	align-content: center;
+
+}
+
+.respanw_amarillo1 {
+	height: 50px;
+	width: 50px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: yellow;
+	border-radius: 50px;
+    margin: 11px;
+}
+
+.respanw_amarillo2 {
+	height: 50px;
+	width: 50px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: yellow;
+	border-radius: 50px;
+	margin: 11px;
+}
+
+.respanw_amarillo3 {
+	height: 50px;
+	width: 50px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: yellow;
+	border-radius: 50px;
+	margin: 11px;
+}
+
+.respanw_amarillo4 {
+	height: 50px;
+	width: 50px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: yellow;
+	border-radius: 50px;
+	margin: 11px;
+}
+
+#esquina_roja {
+	border-color: red;
+	border-width: 1cm;
+	border-radius: 0px 20px 0px 0px;
+	grid-column: 10 / 14;
+	grid-row: 1 / 7;
+	display: grid;
+	grid-template-columns: 2cm 2cm;
+	grid-template-rows: 2cm 2cm;
+	justify-content: center;
+	align-content: center;
+	
+}
+
+.respanw_rojo1 {
+	height: 50px;
+	width: 50px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: red;
+	border-radius: 50px;
+    margin: 11px;
+}
+
+.respanw_rojo2 {
+	height: 50px;
+	width: 50px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: red;
+	border-radius: 50px;
+	margin: 11px;
+}
+
+.respanw_rojo3 {
+	height: 50px;
+	width: 50px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: red;
+	border-radius: 50px;
+	margin: 11px;
+}
+
+.respanw_rojo4 {
+	height: 50px;
+	width: 50px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: red;
+	border-radius: 50px;
+	margin: 11px;
+}
+
+#esquina_azul {
+	border-color: blue;
+	border-width: 1cm;
+	border-radius: 0px 0px 0px 20px;
+	grid-column: 1 / 7;
+	grid-row: 10 / 14;
+	display: grid;
+	grid-template-columns: 2cm 2cm;
+	grid-template-rows: 2cm 2cm;
+	justify-content: center;
+	align-content: center;
+	
+}
+
+.respanw_azul1 {
+	height: 50px;
+	width: 50px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: blue;
+	border-radius: 50px;
+    margin: 11px;
+}
+
+.respanw_azul2 {
+	height: 50px;
+	width: 50px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: blue;
+	border-radius: 50px;
+	margin: 11px;
+}
+
+.respanw_azul3 {
+	height: 50px;
+	width: 50px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: blue;
+	border-radius: 50px;
+	margin: 11px;
+}
+
+.respanw_azul4 {
+	height: 50px;
+	width: 50px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: blue;
+	border-radius: 50px;
+	margin: 11px;
+}
+
+#esquina_verde {
+	border-color: green;
+	border-width: 1cm;
+	border-radius: 0px 0px 20px 0px;
+	grid-column: 10 / 14;
+	grid-row: 10 / 14;
+	display: grid;
+	grid-template-columns: 2cm 2cm;
+	grid-template-rows: 2cm 2cm;
+	justify-content: center;
+	align-content: center;
+	
+}
+
+.respanw_verde1 {
+	height: 50px;
+	width: 50px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: green;
+	border-radius: 50px;
+    margin: 11px;
+}
+
+.respanw_verde2 {
+	height: 50px;
+	width: 50px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: green;
+	border-radius: 50px;
+	margin: 11px;
+}
+
+.respanw_verde3 {
+	height: 50px;
+	width: 50px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: green;
+	border-radius: 50px;
+	margin: 11px;
+}
+
+.respanw_verde4 {
+	height: 50px;
+	width: 50px;
+	border-style: solid;
+	border-width: 3px;
+	border-color: green;
+	border-radius: 50px;
+	margin: 11px;
+}
+
+.casilla {
+	height: 1cm;
+	width:1cm;
+	border-style: solid;
+	border-color: rgb(204, 204, 179);
+	border-width: 1px;
+}
+
+#casilla13 {
+	border-color: blue;
+	border-width: 4px;
+}
+
+#casilla14 {
+	border-color: blue;
+	border-width: 4px;
+}
+
+#casilla11 {
+	border-color: blue;
+	border-width: 4px;
+}
+
+#casilla8 {
+	border-color: blue;
+	border-width: 4px;
+}
+
+#casilla5 {
+	border-color: blue;
+	border-width: 4px;
+}
+
+#casilla2 {
+	border-color: blue;
+	border-width: 4px;
+}
+
+#casilla20 {
+	border-color: yellow;
+	border-width: 4px;
+}
+
+#casilla28 {
+	border-color: yellow;
+	border-width: 4px;
+}
+
+#casilla29 {
+	border-color: yellow;
+	border-width: 4px;
+}
+
+#casilla30 {
+	border-color: yellow;
+	border-width: 4px;
+}
+
+#casilla26 {
+	border-color: yellow;
+	border-width: 4px;
+}
+
+#casilla27 {
+	border-color: yellow;
+	border-width: 4px;
+}
+
+#casilla42 {
+	border-color: red;
+	border-width: 4px;
+}
+
+#casilla41 {
+	border-color: red;
+	border-width: 4px;
+}
+
+#casilla44 {
+	border-color: red;
+	border-width: 4px;
+}
+
+#casilla47 {
+	border-color: red;
+	border-width: 4px;
+}
+
+#casilla50 {
+	border-color:red;
+	border-width: 4px;
+}
+
+#casilla53 {
+	border-color: red;
+	border-width: 4px;
+}
+
+#casilla71 {
+	border-color: green;
+	border-width: 4px;
+}
+
+#casilla65 {
+	border-color: green;
+	border-width: 4px;
+}
+
+#casilla64 {
+	border-color: green;
+	border-width: 4px;
+}
+
+#casilla63 {
+	border-color: green;
+	border-width: 4px;
+}
+
+#casilla62 {
+	border-color: green;
+	border-width: 4px;
+}
+
+#casilla61 {
+	border-color: green;
+	border-width: 4px;
+}
+
+.meta {
+	height: 3cm;
+	width: 3cm;
+	border-style: solid;
+	border-width: 1cm;
+	border-bottom-color: blue;
+	border-top-color: red;
+	border-right-color: green;
+	border-left-color: yellow;
+	grid-column: 7 / 10;
+	grid-row: 7 / 10;
+	/*display: grid;
+	grid-template-rows: 1cm 1cm 1cm; 
+	grid-template-columns: 1cm 1cm 1cm;*/
+}
+
+.PuntosRojos {
+	text-align: center;
+	margin-top: -0.7cm;
+}
+.PuntosVerdes {
+	text-align: center;
+	margin-right: -1.9cm;
+	margin-bottom: -0.4cm;
+	position: relative;
+	top: 7px;
+}
+.PuntosAmarillos {
+	text-align: center;
+	margin-left: -2cm;
+	margin-top: -0.7cm;
+}
+.PuntosAzules {
+	text-align: center;
+	margin-top: 25px;		
+}
+
+.Dado {
+	height: 1cm;
+	width: 1cm;
+	font-family: 'Press Start 2P', serif;
+	border-width: 2px;
+	transition-duration: 0.1s;
+	margin-top: -6px;
+}
+
+
+.Dado:active {
+	transform: rotate(360deg);
+}
+
+
+.sector_inferior {
+	grid-column: 7 / 13;
+	grid-row: 10 / 16;	
+	display: grid;
+	grid-template-columns: 1cm 1cm 1cm;
+	grid-template-rows: 1cm 1cm 1cm 1cm 1cm 1cm;
+	height: 6cm;
+	width: 3cm;
+}
+
+.sector_izquierdo {	
+	grid-column: 1 / 7;
+	grid-row: 7 / 11;	
+	display: grid;
+	grid-template-columns: 1cm 1cm 1cm 1cm 1cm 1cm;
+	grid-template-rows: 1cm 1cm 1cm;
+	height: 3cm;
+	width: 6cm;
+}
+
+.sector_superior {
+	grid-column: 7 / 13;
+	grid-row: 1 / 7;	
+	display: grid;
+	grid-template-columns: 1cm 1cm 1cm;
+	grid-template-rows: 1cm 1cm 1cm 1cm 1cm 1cm;
+	height: 6cm;
+	width: 3cm;
+}
+
+.sector_derecho {	
+	grid-column: 10 / 16;
+	grid-row: 7 / 11;	
+	display: grid;
+	grid-template-columns: 1cm 1cm 1cm 1cm 1cm 1cm;
+	grid-template-rows: 1cm 1cm 1cm;
+	height: 3cm;
+	width: 6cm;
+}
+
+.MarcoAzul {
+	font-size: 12px;
+	border-style: solid;
+	border-right: none;
+	border-color: rgb(77, 77, 255);
+	background-color: rgb(255, 204, 204);
+	border-width: 3px;
+	border-radius: 6px;
+	margin: 4px;
+	height: 2cm;
+	width: 4cm;
+	padding: 4px;
+	grid-row: 3 / 3;
+	grid-column: 1 / 1;
+	margin-right: 0;
+}
+
+.NombreAzul {
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.Vida {
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 5px;
+	height: 10px;
+	width: 10px;
+	display: inline-block;
+	margin-left: 25px;
+	background-color: red;
+}
+
+.MarcoRojo {
+	font-size: 12px;
+	border-style: solid;
+	border-left: none;
+	border-color: rgb(255, 51, 51);
+	background-color: rgb(255, 204, 204);
+	border-width: 3px;
+	border-radius: 6px;
+	margin: 4px;
+	height: 2cm;
+	width: 4cm;
+	padding: 4px;
+	grid-row: 1 / 1;
+	grid-column: 3 / 3;
+	margin-left: -1px;
+}
+
+
+.NombreRojo {
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.MarcoAmarillo {
+	font-size: 12px;
+	border-style: solid;
+	border-color: rgb(255, 255, 102);
+	background-color: rgb(255, 204, 204);
+	border-width: 3px;
+	border-radius: 6px;
+	margin: 4px;
+	height: 2cm;
+	width: 4cm;
+	padding: 4px;
+	grid-row: 1 / 1;
+	grid-column: 1 / 1;
+	margin-right: 0;
+	border-right: none;
+}
+
+.NombreAmarillo {
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.MarcoVerde {
+	font-size: 12px;
+	border-style: solid;
+	border-color: green;
+	background-color: rgb(255, 204, 204);
+	border-width: 3px;
+	border-radius: 6px;
+	margin: 4px;
+	height: 2cm;
+	width: 4cm;
+	padding: 4px;
+	grid-row: 3 / 3;
+	grid-column: 3 / 3;
+	margin-left: -1px;
+	border-left: none;
+}
+
+.NombreVerde {
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.BotonJugar {
+	font-family: 'Press Start 2P', serif;
+	height: 3cm;
+	width: 3cm;
+	border-top-color: red;
+	border-bottom-color: blue;
+	border-right-color: rgb(26, 255, 26); 
+	border-left-color: yellow;
+	border-width: 15px;  
+	position: relative;
+	left: 378px;
+}
+
+.BotonJugar:hover {
+	color: white;
+	background-color: black;
+}
+
+.BotonJugar:active {
+	display: none;
+}
+
+.Menu {
+	grid-row: 4 / 4;
+}
