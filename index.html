@@ -8,16 +8,32 @@
 <body>
 	<div class="tablero">
 		<div class="esquina" id="esquina_amarilla">
-			<div class="respanw_amarillo1"></div>
-			<div class="respanw_amarillo2"></div>
-			<div class="respanw_amarillo3"></div>
-			<div class="respanw_amarillo4"></div>
+			<div class="respanw_amarillo">
+				<div class="pieza_amarilla"></div>
+			</div>
+			<div class="respanw_amarillo">
+				<div class="pieza_amarilla"></div>
+			</div>
+			<div class="respanw_amarillo">
+				<div class="pieza_amarilla"></div>
+			</div>
+			<div class="respanw_amarillo">
+				<div class="pieza_amarilla"></div>
+			</div>
 		</div>
 		<div class="esquina" id="esquina_roja">
-			<div class="respanw_rojo1"></div>
-			<div class="respanw_rojo2"></div>
-			<div class="respanw_rojo3"></div>
-			<div class="respanw_rojo4"></div>
+			<div class="respanw_rojo">
+				<div class="pieza_roja"></div>
+			</div>
+			<div class="respanw_rojo">
+				<div class="pieza_roja"></div>
+			</div>
+			<div class="respanw_rojo">
+				<div class="pieza_roja"></div>
+			</div>
+			<div class="respanw_rojo">
+				<div class="pieza_roja"></div>
+			</div>
 		</div>
 		<div class="meta" id="">
 			<p class="PuntosRojos">0</p>
@@ -27,96 +43,471 @@
 			<p class="PuntosAzules">0</p>
 		</div>
 		<div class="esquina" id="esquina_azul">
-			<div class="respanw_azul1"></div>
-			<div class="respanw_azul2"></div>
-			<div class="respanw_azul3"></div>
-			<div class="respanw_azul4"></div>
+			<div class="respanw_azul">
+				<div class="pieza_azul"></div>
+			</div>
+			<div class="respanw_azul">
+				<div class="pieza_azul"></div>
+			</div>
+			<div class="respanw_azul">
+				<div class="pieza_azul"></div>
+			</div>
+			<div class="respanw_azul">
+				<div class="pieza_azul"></div>
+			</div>
 		</div>
 		<div class="esquina" id="esquina_verde">
-			<div class="respanw_verde1"></div>
-			<div class="respanw_verde2"></div>
-			<div class="respanw_verde3"></div>
-			<div class="respanw_verde4"></div>
+			<div class="respanw_verde">
+				<div class="pieza_verde"></div>
+			</div>
+			<div class="respanw_verde">
+				<div class="pieza_verde"></div>
+			</div>
+			<div class="respanw_verde">
+				<div class="pieza_verde"></div>
+			</div>
+			<div class="respanw_verde">
+				<div class="pieza_verde"></div>
+			</div>
 		</div>
 		<div class="sector_inferior">
-			<div class="casilla" id="casilla1"></div>
-			<div class="casilla" id="casilla2"></div>
-			<div class="casilla" id="casilla3"></div>
-			<div class="casilla" id="casilla4"></div>
-			<div class="casilla" id="casilla5"></div>
-			<div class="casilla" id="casilla6"></div>
-			<div class="casilla" id="casilla7"></div>
-			<div class="casilla" id="casilla8"></div>
-			<div class="casilla" id="casilla9"></div>
-			<div class="casilla" id="casilla10"></div>
-			<div class="casilla" id="casilla11"></div>
-			<div class="casilla" id="casilla12"></div>
-			<div class="casilla" id="casilla13"></div>
-			<div class="casilla" id="casilla14"></div>
-			<div class="casilla" id="casilla15"></div>
-			<div class="casilla" id="casilla16"></div>
-			<div class="casilla" id="casilla17"></div>
-			<div class="casilla" id="casilla18"></div>
+			<div class="casilla" id="casilla1">
+				<div class="puesto_casilla" id="puesto1-1"></div>
+				<div class="puesto_casilla" id="puesto2-1"></div>
+				<div class="puesto_casilla" id="puesto3-1"></div>
+				<div class="puesto_casilla" id="puesto4-1"></div>
+			</div>
+			<div class="casilla" id="casilla2">
+				<div class="puesto_casilla" id="puesto1-2"></div>
+				<div class="puesto_casilla" id="puesto2-2"></div>
+				<div class="puesto_casilla" id="puesto3-2"></div>
+				<div class="puesto_casilla" id="puesto4-2"></div>
+			</div>
+			<div class="casilla" id="casilla3">
+				<div class="puesto_casilla" id="puesto1-3"></div>
+				<div class="puesto_casilla" id="puesto2-3"></div>
+				<div class="puesto_casilla" id="puesto3-3"></div>
+				<div class="puesto_casilla" id="puesto4-3"></div>
+			</div>
+			<div class="casilla" id="casilla4">
+				<div class="puesto_casilla" id="puesto1-4"></div>
+				<div class="puesto_casilla" id="puesto2-4"></div>
+				<div class="puesto_casilla" id="puesto3-4"></div>
+				<div class="puesto_casilla" id="puesto4-4"></div>
+			</div>
+			<div class="casilla" id="casilla5">
+				<div class="puesto_casilla" id="puesto1-5"></div>
+				<div class="puesto_casilla" id="puesto2-5"></div>
+				<div class="puesto_casilla" id="puesto3-5"></div>
+				<div class="puesto_casilla" id="puesto4-5"></div>
+			</div>
+			<div class="casilla" id="casilla6">
+				<div class="puesto_casilla" id="puesto1-6"></div>
+				<div class="puesto_casilla" id="puesto2-6"></div>
+				<div class="puesto_casilla" id="puesto3-6"></div>
+				<div class="puesto_casilla" id="puesto4-6"></div>
+			</div>
+			<div class="casilla" id="casilla7">
+				<div class="puesto_casilla" id="puesto1-7"></div>
+				<div class="puesto_casilla" id="puesto2-7"></div>
+				<div class="puesto_casilla" id="puesto3-7"></div>
+				<div class="puesto_casilla" id="puesto4-7"></div>
+			</div>
+			<div class="casilla" id="casilla8">
+				<div class="puesto_casilla" id="puesto1-8"></div>
+				<div class="puesto_casilla" id="puesto2-8"></div>
+				<div class="puesto_casilla" id="puesto3-8"></div>
+				<div class="puesto_casilla" id="puesto4-8"></div>
+			</div>
+			<div class="casilla" id="casilla9">
+				<div class="puesto_casilla" id="puesto1-9"></div>
+				<div class="puesto_casilla" id="puesto2-9"></div>
+				<div class="puesto_casilla" id="puesto3-9"></div>
+				<div class="puesto_casilla" id="puesto4-9"></div>
+			</div>
+			<div class="casilla" id="casilla10">
+				<div class="puesto_casilla" id="puesto1-10"></div>
+				<div class="puesto_casilla" id="puesto2-10"></div>
+				<div class="puesto_casilla" id="puesto3-10"></div>
+				<div class="puesto_casilla" id="puesto4-10"></div>
+			</div>
+			<div class="casilla" id="casilla11">
+				<div class="puesto_casilla" id="puesto1-11"></div>
+				<div class="puesto_casilla" id="puesto2-11"></div>
+				<div class="puesto_casilla" id="puesto3-11"></div>
+				<div class="puesto_casilla" id="puesto4-11"></div>
+			</div>
+			<div class="casilla" id="casilla12">
+				<div class="puesto_casilla" id="puesto1-12"></div>
+				<div class="puesto_casilla" id="puesto2-12"></div>
+				<div class="puesto_casilla" id="puesto3-12"></div>
+				<div class="puesto_casilla" id="puesto4-12"></div>
+			</div>
+			<div class="casilla" id="casilla13">
+				<div class="puesto_casilla" id="puesto1-13"></div>
+				<div class="puesto_casilla" id="puesto2-13"></div>
+				<div class="puesto_casilla" id="puesto3-13"></div>
+				<div class="puesto_casilla" id="puesto4-13"></div>
+			</div>
+			<div class="casilla" id="casilla14">
+				<div class="puesto_casilla" id="puesto1-14"></div>
+				<div class="puesto_casilla" id="puesto2-14"></div>
+				<div class="puesto_casilla" id="puesto3-14"></div>
+				<div class="puesto_casilla" id="puesto4-14"></div>
+			</div>
+			<div class="casilla" id="casilla15">
+				<div class="puesto_casilla" id="puesto1-15"></div>
+				<div class="puesto_casilla" id="puesto2-15"></div>
+				<div class="puesto_casilla" id="puesto3-15"></div>
+				<div class="puesto_casilla" id="puesto4-15"></div>
+			</div>
+			<div class="casilla" id="casilla16">
+				<div class="puesto_casilla" id="puesto1-16"></div>
+				<div class="puesto_casilla" id="puesto2-16"></div>
+				<div class="puesto_casilla" id="puesto3-16"></div>
+				<div class="puesto_casilla" id="puesto4-16"></div>
+			</div>
+			<div class="casilla" id="casilla17">
+				<div class="puesto_casilla" id="puesto1-17"></div>
+				<div class="puesto_casilla" id="puesto2-17"></div>
+				<div class="puesto_casilla" id="puesto3-17"></div>
+				<div class="puesto_casilla" id="puesto4-17"></div>
+			</div>
+			<div class="casilla" id="casilla18">
+				<div class="puesto_casilla" id="puesto1-18"></div>
+				<div class="puesto_casilla" id="puesto2-18"></div>
+				<div class="puesto_casilla" id="puesto3-18"></div>
+				<div class="puesto_casilla" id="puesto4-18"></div>
+			</div>
 		</div>
 		<div class="sector_izquierdo">
-			<div class="casilla" id="casilla19"></div>
-			<div class="casilla" id="casilla20"></div>
-			<div class="casilla" id="casilla21"></div>
-			<div class="casilla" id="casilla22"></div>
-			<div class="casilla" id="casilla23"></div>
-			<div class="casilla" id="casilla24"></div>
-			<div class="casilla" id="casilla25"></div>
-			<div class="casilla" id="casilla26"></div>
-			<div class="casilla" id="casilla27"></div>
-			<div class="casilla" id="casilla28"></div>
-			<div class="casilla" id="casilla29"></div>
-			<div class="casilla" id="casilla30"></div>
-			<div class="casilla" id="casilla31"></div>
-			<div class="casilla" id="casilla32"></div>
-			<div class="casilla" id="casilla33"></div>
-			<div class="casilla" id="casilla34"></div>
-			<div class="casilla" id="casilla35"></div>
-			<div class="casilla" id="casilla36"></div>
+			<div class="casilla" id="casilla19">
+				<div class="puesto_casilla" id="puesto1-19"></div>
+				<div class="puesto_casilla" id="puesto2-19"></div>
+				<div class="puesto_casilla" id="puesto3-19"></div>
+				<div class="puesto_casilla" id="puesto4-19"></div>
+			</div>
+			<div class="casilla" id="casilla20">
+				<div class="puesto_casilla" id="puesto1-20"></div>
+				<div class="puesto_casilla" id="puesto2-20"></div>
+				<div class="puesto_casilla" id="puesto3-20"></div>
+				<div class="puesto_casilla" id="puesto4-20"></div></div>
+			<div class="casilla" id="casilla21">
+				<div class="puesto_casilla" id="puesto1-21"></div>
+				<div class="puesto_casilla" id="puesto2-21"></div>
+				<div class="puesto_casilla" id="puesto3-21"></div>
+				<div class="puesto_casilla" id="puesto4-21"></div>
+			</div>
+			<div class="casilla" id="casilla22">
+				<div class="puesto_casilla" id="puesto1-22"></div>
+				<div class="puesto_casilla" id="puesto2-22"></div>
+				<div class="puesto_casilla" id="puesto3-22"></div>
+				<div class="puesto_casilla" id="puesto4-22"></div>
+			</div>
+			<div class="casilla" id="casilla23">
+				<div class="puesto_casilla" id="puesto1-23"></div>
+				<div class="puesto_casilla" id="puesto2-23"></div>
+				<div class="puesto_casilla" id="puesto3-23"></div>
+				<div class="puesto_casilla" id="puesto4-23"></div>
+			</div>
+			<div class="casilla" id="casilla24">
+				<div class="puesto_casilla" id="puesto1-24"></div>
+				<div class="puesto_casilla" id="puesto2-24"></div>
+				<div class="puesto_casilla" id="puesto3-24"></div>
+				<div class="puesto_casilla" id="puesto4-24"></div>
+			</div>
+			<div class="casilla" id="casilla25">
+				<div class="puesto_casilla" id="puesto1-25"></div>
+				<div class="puesto_casilla" id="puesto2-25"></div>
+				<div class="puesto_casilla" id="puesto3-25"></div>
+				<div class="puesto_casilla" id="puesto4-25"></div>
+			</div>
+			<div class="casilla" id="casilla26">
+				<div class="puesto_casilla" id="puesto1-26"></div>
+				<div class="puesto_casilla" id="puesto2-26"></div>
+				<div class="puesto_casilla" id="puesto3-26"></div>
+				<div class="puesto_casilla" id="puesto4-26"></div>
+			</div>
+			<div class="casilla" id="casilla27">
+				<div class="puesto_casilla" id="puesto1-27"></div>
+				<div class="puesto_casilla" id="puesto2-27"></div>
+				<div class="puesto_casilla" id="puesto3-27"></div>
+				<div class="puesto_casilla" id="puesto4-27"></div>
+			</div>
+			<div class="casilla" id="casilla28">
+				<div class="puesto_casilla" id="puesto1-28"></div>
+				<div class="puesto_casilla" id="puesto2-28"></div>
+				<div class="puesto_casilla" id="puesto3-28"></div>
+				<div class="puesto_casilla" id="puesto4-28"></div>
+			</div>
+			<div class="casilla" id="casilla29">
+				<div class="puesto_casilla" id="puesto1-29"></div>
+				<div class="puesto_casilla" id="puesto2-29"></div>
+				<div class="puesto_casilla" id="puesto3-29"></div>
+				<div class="puesto_casilla" id="puesto4-29"></div>
+			</div>
+			<div class="casilla" id="casilla30">
+				<div class="puesto_casilla" id="puesto1-30"></div>
+				<div class="puesto_casilla" id="puesto2-30"></div>
+				<div class="puesto_casilla" id="puesto3-30"></div>
+				<div class="puesto_casilla" id="puesto4-30"></div>
+			</div>
+			<div class="casilla" id="casilla31">
+				<div class="puesto_casilla" id="puesto1-31"></div>
+				<div class="puesto_casilla" id="puesto2-31"></div>
+				<div class="puesto_casilla" id="puesto3-31"></div>
+				<div class="puesto_casilla" id="puesto4-31"></div>
+			</div>
+			<div class="casilla" id="casilla32">
+				<div class="puesto_casilla" id="puesto1-32"></div>
+				<div class="puesto_casilla" id="puesto2-32"></div>
+				<div class="puesto_casilla" id="puesto3-32"></div>
+				<div class="puesto_casilla" id="puesto4-32"></div>
+			</div>
+			<div class="casilla" id="casilla33">
+				<div class="puesto_casilla" id="puesto1-33"></div>
+				<div class="puesto_casilla" id="puesto2-33"></div>
+				<div class="puesto_casilla" id="puesto3-33"></div>
+				<div class="puesto_casilla" id="puesto4-33"></div>
+			</div>
+			<div class="casilla" id="casilla34">
+				<div class="puesto_casilla" id="puesto1-34"></div>
+				<div class="puesto_casilla" id="puesto2-34"></div>
+				<div class="puesto_casilla" id="puesto3-34"></div>
+				<div class="puesto_casilla" id="puesto4-34"></div>
+			</div>
+			<div class="casilla" id="casilla35">
+				<div class="puesto_casilla" id="puesto1-35"></div>
+				<div class="puesto_casilla" id="puesto2-35"></div>
+				<div class="puesto_casilla" id="puesto3-35"></div>
+				<div class="puesto_casilla" id="puesto4-35"></div>
+			</div>
+			<div class="casilla" id="casilla36">
+				<div class="puesto_casilla" id="puesto1-36"></div>
+				<div class="puesto_casilla" id="puesto2-36></div>
+				<div class="puesto_casilla" id="puesto3-36"></div>
+				<div class="puesto_casilla" id="puesto4-36"></div>
+			</div>
 		</div>
 		<div class="sector_superior">
-			<div class="casilla" id="casilla37"></div>
-			<div class="casilla" id="casilla38"></div>
-			<div class="casilla" id="casilla39"></div>
-			<div class="casilla" id="casilla40"></div>
-			<div class="casilla" id="casilla41"></div>
-			<div class="casilla" id="casilla42"></div>
-			<div class="casilla" id="casilla43"></div>
-			<div class="casilla" id="casilla44"></div>
-			<div class="casilla" id="casilla45"></div>
-			<div class="casilla" id="casilla46"></div>
-			<div class="casilla" id="casilla47"></div>
-			<div class="casilla" id="casilla48"></div>
-			<div class="casilla" id="casilla49"></div>
-			<div class="casilla" id="casilla50"></div>
-			<div class="casilla" id="casilla51"></div>
-			<div class="casilla" id="casilla52"></div>
-			<div class="casilla" id="casilla53"></div>
-			<div class="casilla" id="casilla54"></div>
+			<div class="casilla" id="casilla37">
+				<div class="puesto_casilla" id="puesto1-37"></div>
+				<div class="puesto_casilla" id="puesto2-37"></div>
+				<div class="puesto_casilla" id="puesto3-37"></div>
+				<div class="puesto_casilla" id="puesto4-37"></div>
+			</div>
+			<div class="casilla" id="casilla38">
+				<div class="puesto_casilla" id="puesto1-38"></div>
+				<div class="puesto_casilla" id="puesto2-38"></div>
+				<div class="puesto_casilla" id="puesto3-38"></div>
+				<div class="puesto_casilla" id="puesto4-38"></div>
+			</div>
+			<div class="casilla" id="casilla39">
+				<div class="puesto_casilla" id="puesto1-39"></div>
+				<div class="puesto_casilla" id="puesto2-39"></div>
+				<div class="puesto_casilla" id="puesto3-39"></div>
+				<div class="puesto_casilla" id="puesto4-39"></div>
+			</div>
+			<div class="casilla" id="casilla40">
+				<div class="puesto_casilla" id="puesto1-40"></div>
+				<div class="puesto_casilla" id="puesto2-40"></div>
+				<div class="puesto_casilla" id="puesto3-40"></div>
+				<div class="puesto_casilla" id="puesto4-40"></div>
+			</div>
+			<div class="casilla" id="casilla41">
+				<div class="puesto_casilla" id="puesto1-41"></div>
+				<div class="puesto_casilla" id="puesto2-41"></div>
+				<div class="puesto_casilla" id="puesto3-41"></div>
+				<div class="puesto_casilla" id="puesto4-41"></div>
+			</div>
+			<div class="casilla" id="casilla42">
+				<div class="puesto_casilla" id="puesto1-42"></div>
+				<div class="puesto_casilla" id="puesto2-42"></div>
+				<div class="puesto_casilla" id="puesto3-42"></div>
+				<div class="puesto_casilla" id="puesto4-42"></div>
+			</div>
+			<div class="casilla" id="casilla43">
+				<div class="puesto_casilla" id="puesto1-43"></div>
+				<div class="puesto_casilla" id="puesto2-43"></div>
+				<div class="puesto_casilla" id="puesto3-43"></div>
+				<div class="puesto_casilla" id="puesto4-43"></div>
+			</div>
+			<div class="casilla" id="casilla44">
+				<div class="puesto_casilla" id="puesto1-44"></div>
+				<div class="puesto_casilla" id="puesto2-44"></div>
+				<div class="puesto_casilla" id="puesto3-44"></div>
+				<div class="puesto_casilla" id="puesto4-44"></div>
+			</div>
+			<div class="casilla" id="casilla45">
+				<div class="puesto_casilla" id="puesto1-45"></div>
+				<div class="puesto_casilla" id="puesto2-45"></div>
+				<div class="puesto_casilla" id="puesto3-45"></div>
+				<div class="puesto_casilla" id="puesto4-45"></div>
+			</div>
+			<div class="casilla" id="casilla46">
+				<div class="puesto_casilla" id="puesto1-46"></div>
+				<div class="puesto_casilla" id="puesto2-46"></div>
+				<div class="puesto_casilla" id="puesto3-46"></div>
+				<div class="puesto_casilla" id="puesto4-46"></div>
+			</div>
+			<div class="casilla" id="casilla47">
+				<div class="puesto_casilla" id="puesto1-47"></div>
+				<div class="puesto_casilla" id="puesto2-47"></div>
+				<div class="puesto_casilla" id="puesto3-47"></div>
+				<div class="puesto_casilla" id="puesto4-47"></div>
+			</div>
+			<div class="casilla" id="casilla48">
+				<div class="puesto_casilla" id="puesto1-48"></div>
+				<div class="puesto_casilla" id="puesto2-48"></div>
+				<div class="puesto_casilla" id="puesto3-48"></div>
+				<div class="puesto_casilla" id="puesto4-48"></div>
+			</div>
+			<div class="casilla" id="casilla49">
+				<div class="puesto_casilla" id="puesto1-49"></div>
+				<div class="puesto_casilla" id="puesto2-49"></div>
+				<div class="puesto_casilla" id="puesto3-49"></div>
+				<div class="puesto_casilla" id="puesto4-49"></div>
+			</div>
+			<div class="casilla" id="casilla50">
+				<div class="puesto_casilla" id="puesto1-50"></div>
+				<div class="puesto_casilla" id="puesto2-50"></div>
+				<div class="puesto_casilla" id="puesto3-50"></div>
+				<div class="puesto_casilla" id="puesto4-50"></div>
+			</div>
+			<div class="casilla" id="casilla51">
+				<div class="puesto_casilla" id="puesto1-51"></div>
+				<div class="puesto_casilla" id="puesto2-51"></div>
+				<div class="puesto_casilla" id="puesto3-51"></div>
+				<div class="puesto_casilla" id="puesto4-51"></div>
+			</div>
+			<div class="casilla" id="casilla52">
+				<div class="puesto_casilla" id="puesto1-52"></div>
+				<div class="puesto_casilla" id="puesto2-52"></div>
+				<div class="puesto_casilla" id="puesto3-52"></div>
+				<div class="puesto_casilla" id="puesto4-52"></div>
+			</div>
+			<div class="casilla" id="casilla53">
+				<div class="puesto_casilla" id="puesto1-53"></div>
+				<div class="puesto_casilla" id="puesto2-53"></div>
+				<div class="puesto_casilla" id="puesto3-53"></div>
+				<div class="puesto_casilla" id="puesto4-53"></div>
+			</div>
+			<div class="casilla" id="casilla54">
+				<div class="puesto_casilla" id="puesto1-54"></div>
+				<div class="puesto_casilla" id="puesto2-54"></div>
+				<div class="puesto_casilla" id="puesto3-54"></div>
+				<div class="puesto_casilla" id="puesto4-54"></div>
+			</div>
 		</div>
 		<div class="sector_derecho">
-			<div class="casilla" id="casilla55"></div>
-			<div class="casilla" id="casilla56"></div>
-			<div class="casilla" id="casilla57"></div>
-			<div class="casilla" id="casilla58"></div>
-			<div class="casilla" id="casilla59"></div>
-			<div class="casilla" id="casilla60"></div>
-			<div class="casilla" id="casilla61"></div>
-			<div class="casilla" id="casilla62"></div>
-			<div class="casilla" id="casilla63"></div>
-			<div class="casilla" id="casilla64"></div>
-			<div class="casilla" id="casilla65"></div>
-			<div class="casilla" id="casilla66"></div>
-			<div class="casilla" id="casilla67"></div>
-			<div class="casilla" id="casilla68"></div>
-			<div class="casilla" id="casilla69"></div>
-			<div class="casilla" id="casilla70"></div>
-			<div class="casilla" id="casilla71"></div>
-			<div class="casilla" id="casilla72"></div>
+			<div class="casilla" id="casilla55">
+				<div class="puesto_casilla" id="puesto1-55"></div>
+				<div class="puesto_casilla" id="puesto2-55"></div>
+				<div class="puesto_casilla" id="puesto3-55"></div>
+				<div class="puesto_casilla" id="puesto4-55"></div>
+			</div>
+			<div class="casilla" id="casilla56">
+				<div class="puesto_casilla" id="puesto1-56"></div>
+				<div class="puesto_casilla" id="puesto2-56"></div>
+				<div class="puesto_casilla" id="puesto3-56"></div>
+				<div class="puesto_casilla" id="puesto4-56"></div>
+			</div>
+			<div class="casilla" id="casilla57">
+				<div class="puesto_casilla" id="puesto1-57"></div>
+				<div class="puesto_casilla" id="puesto2-57"></div>
+				<div class="puesto_casilla" id="puesto3-57"></div>
+				<div class="puesto_casilla" id="puesto4-57"></div>
+			</div>
+			<div class="casilla" id="casilla58">
+				<div class="puesto_casilla" id="puesto1-58"></div>
+				<div class="puesto_casilla" id="puesto2-58"></div>
+				<div class="puesto_casilla" id="puesto3-58"></div>
+				<div class="puesto_casilla" id="puesto4-58"></div>
+			</div>
+			<div class="casilla" id="casilla59">
+				<div class="puesto_casilla" id="puesto1-59"></div>
+				<div class="puesto_casilla" id="puesto2-59"></div>
+				<div class="puesto_casilla" id="puesto3-59"></div>
+				<div class="puesto_casilla" id="puesto4-59"></div>
+			</div>
+			<div class="casilla" id="casilla60">
+				<div class="puesto_casilla" id="puesto1-60"></div>
+				<div class="puesto_casilla" id="puesto2-60"></div>
+				<div class="puesto_casilla" id="puesto3-60"></div>
+				<div class="puesto_casilla" id="puesto4-60"></div>
+			</div>
+			<div class="casilla" id="casilla61">
+				<div class="puesto_casilla" id="puesto1-61"></div>
+				<div class="puesto_casilla" id="puesto2-61"></div>
+				<div class="puesto_casilla" id="puesto3-61"></div>
+				<div class="puesto_casilla" id="puesto4-61"></div>
+			</div>
+			<div class="casilla" id="casilla62">
+				<div class="puesto_casilla" id="puesto1-62"></div>
+				<div class="puesto_casilla" id="puesto2-62"></div>
+				<div class="puesto_casilla" id="puesto3-62"></div>
+				<div class="puesto_casilla" id="puesto4-62"></div>
+			</div>
+			<div class="casilla" id="casilla63">
+				<div class="puesto_casilla" id="puesto1-63"></div>
+				<div class="puesto_casilla" id="puesto2-63"></div>
+				<div class="puesto_casilla" id="puesto3-63"></div>
+				<div class="puesto_casilla" id="puesto4-63"></div>
+			</div>
+			<div class="casilla" id="casilla64">
+				<div class="puesto_casilla" id="puesto1-64"></div>
+				<div class="puesto_casilla" id="puesto2-64"></div>
+				<div class="puesto_casilla" id="puesto3-64"></div>
+				<div class="puesto_casilla" id="puesto4-64"></div>
+			</div>
+			<div class="casilla" id="casilla65">
+				<div class="puesto_casilla" id="puesto1-65"></div>
+				<div class="puesto_casilla" id="puesto2-65"></div>
+				<div class="puesto_casilla" id="puesto3-65"></div>
+				<div class="puesto_casilla" id="puesto4-65"></div>
+			</div>
+			<div class="casilla" id="casilla66">
+				<div class="puesto_casilla" id="puesto1-66"></div>
+				<div class="puesto_casilla" id="puesto2-66"></div>
+				<div class="puesto_casilla" id="puesto3-66"></div>
+				<div class="puesto_casilla" id="puesto4-66"></div>
+			</div>
+			<div class="casilla" id="casilla67">
+				<div class="puesto_casilla" id="puesto1-67"></div>
+				<div class="puesto_casilla" id="puesto2-67"></div>
+				<div class="puesto_casilla" id="puesto3-67"></div>
+				<div class="puesto_casilla" id="puesto4-67"></div>
+			</div>
+			<div class="casilla" id="casilla68">
+				<div class="puesto_casilla" id="puesto1-68"></div>
+				<div class="puesto_casilla" id="puesto2-68"></div>
+				<div class="puesto_casilla" id="puesto3-68"></div>
+				<div class="puesto_casilla" id="puesto4-68"></div>
+			</div>
+			<div class="casilla" id="casilla69">
+				<div class="puesto_casilla" id="puesto1-69"></div>
+				<div class="puesto_casilla" id="puesto2-69"></div>
+				<div class="puesto_casilla" id="puesto3-69"></div>
+				<div class="puesto_casilla" id="puesto4-69"></div>
+			</div>
+			<div class="casilla" id="casilla70">
+				<div class="puesto_casilla" id="puesto1-70"></div>
+				<div class="puesto_casilla" id="puesto2-70"></div>
+				<div class="puesto_casilla" id="puesto3-70"></div>
+				<div class="puesto_casilla" id="puesto4-70"></div>
+			</div>
+			<div class="casilla" id="casilla71">
+				<div class="puesto_casilla" id="puesto1-71"></div>
+				<div class="puesto_casilla" id="puesto2-71"></div>
+				<div class="puesto_casilla" id="puesto3-71"></div>
+				<div class="puesto_casilla" id="puesto4-71"></div>
+			</div>
+			<div class="casilla" id="casilla72">
+				<div class="puesto_casilla" id="puesto1-72"></div>
+				<div class="puesto_casilla" id="puesto2-72"></div>
+				<div class="puesto_casilla" id="puesto2-72"></div>
+				<div class="puesto_casilla" id="puesto2-72"></div>
+			</div>
 			</div>
 	</div>
 	<div class="MarcoAzul"><p class="NombreAzul">Jugador Azul</p>
@@ -140,13 +531,7 @@
 		<div class="Vida"></div>
 	</div>
 
-	<button class="BotonJugar">PLAY!</button>
-
-
-
-
-
-	
+	<button class="BotonJugar">PLAY!</button>	
 
 </body>
 </html>

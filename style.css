@@ -44,45 +44,31 @@ body {
 
 }
 
-.respanw_amarillo1 {
+.respanw_amarillo {
 	height: 50px;
 	width: 50px;
 	border-style: solid;
-	border-width: 3px;
+	border-width: 4px;
 	border-color: yellow;
 	border-radius: 50px;
     margin: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.respanw_amarillo2 {
-	height: 50px;
-	width: 50px;
+.pieza_amarilla {
 	border-style: solid;
+	border-color: rgb(255, 204, 0);
 	border-width: 3px;
-	border-color: yellow;
-	border-radius: 50px;
-	margin: 11px;
+	border-radius: 1cm;
+	height: 30px;
+	width: 30px;
+	background-color: yellow;
 }
 
-.respanw_amarillo3 {
-	height: 50px;
-	width: 50px;
-	border-style: solid;
-	border-width: 3px;
-	border-color: yellow;
-	border-radius: 50px;
-	margin: 11px;
-}
 
-.respanw_amarillo4 {
-	height: 50px;
-	width: 50px;
-	border-style: solid;
-	border-width: 3px;
-	border-color: yellow;
-	border-radius: 50px;
-	margin: 11px;
-}
+
 
 #esquina_roja {
 	border-color: red;
@@ -98,45 +84,29 @@ body {
 	
 }
 
-.respanw_rojo1 {
+.respanw_rojo {
 	height: 50px;
 	width: 50px;
 	border-style: solid;
-	border-width: 3px;
+	border-width: 4px;
 	border-color: red;
 	border-radius: 50px;
     margin: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.respanw_rojo2 {
-	height: 50px;
-	width: 50px;
+.pieza_roja {
 	border-style: solid;
-	border-width: 3px;
-	border-color: red;
-	border-radius: 50px;
-	margin: 11px;
+	border-color: rgb(204, 0, 0);
+	border-width: 5px;
+	border-radius: 1cm;
+	height: 30px;
+	width: 30px;
+	background-color: red;
 }
 
-.respanw_rojo3 {
-	height: 50px;
-	width: 50px;
-	border-style: solid;
-	border-width: 3px;
-	border-color: red;
-	border-radius: 50px;
-	margin: 11px;
-}
-
-.respanw_rojo4 {
-	height: 50px;
-	width: 50px;
-	border-style: solid;
-	border-width: 3px;
-	border-color: red;
-	border-radius: 50px;
-	margin: 11px;
-}
 
 #esquina_azul {
 	border-color: blue;
@@ -152,45 +122,30 @@ body {
 	
 }
 
-.respanw_azul1 {
+.respanw_azul {
 	height: 50px;
 	width: 50px;
 	border-style: solid;
-	border-width: 3px;
+	border-width: 4px;
 	border-color: blue;
 	border-radius: 50px;
     margin: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.respanw_azul2 {
-	height: 50px;
-	width: 50px;
+.pieza_azul {
 	border-style: solid;
-	border-width: 3px;
-	border-color: blue;
-	border-radius: 50px;
-	margin: 11px;
+	border-color: rgb(0, 163, 204);
+	border-width: 4px;
+	border-radius: 1cm;
+	height: 30px;
+	width: 30px;
+	background-color: blue;
 }
 
-.respanw_azul3 {
-	height: 50px;
-	width: 50px;
-	border-style: solid;
-	border-width: 3px;
-	border-color: blue;
-	border-radius: 50px;
-	margin: 11px;
-}
 
-.respanw_azul4 {
-	height: 50px;
-	width: 50px;
-	border-style: solid;
-	border-width: 3px;
-	border-color: blue;
-	border-radius: 50px;
-	margin: 11px;
-}
 
 #esquina_verde {
 	border-color: green;
@@ -206,45 +161,30 @@ body {
 	
 }
 
-.respanw_verde1 {
+.respanw_verde {
 	height: 50px;
 	width: 50px;
 	border-style: solid;
-	border-width: 3px;
+	border-width: 4px;
 	border-color: green;
 	border-radius: 50px;
     margin: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.respanw_verde2 {
-	height: 50px;
-	width: 50px;
+.pieza_verde {
 	border-style: solid;
+	border-color: rgb(0, 230, 0);
 	border-width: 3px;
-	border-color: green;
-	border-radius: 50px;
-	margin: 11px;
+	border-radius: 1cm;
+	height: 30px;
+	width: 30px;
+	background-color: green;
 }
 
-.respanw_verde3 {
-	height: 50px;
-	width: 50px;
-	border-style: solid;
-	border-width: 3px;
-	border-color: green;
-	border-radius: 50px;
-	margin: 11px;
-}
 
-.respanw_verde4 {
-	height: 50px;
-	width: 50px;
-	border-style: solid;
-	border-width: 3px;
-	border-color: green;
-	border-radius: 50px;
-	margin: 11px;
-}
 
 .casilla {
 	height: 1cm;
@@ -591,3 +531,24 @@ body {
 .Menu {
 	grid-row: 4 / 4;
 }
+
+.casilla {
+	display: grid;
+	grid-template-rows: 0.50cm 0.50cm;
+	grid-template-columns:0.50cm 0.50cm;
+}
+
+.puesto_casilla {
+	height: 90%;
+	width: 90%;
+	border-radius: 10px;
+	color: white;
+	font-size: 50%;
+	text-align: center;
+	line-height: 2.2;
+}
+
+#puesto4-1 {
+	background-color: red;
+} /*marcar color del puessto ocupado
+
