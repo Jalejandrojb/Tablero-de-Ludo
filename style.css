@@ -192,127 +192,38 @@ body {
 	border-style: solid;
 	border-color: rgb(204, 204, 179);
 	border-width: 1px;
+	display: grid;
+	grid-template-rows: 0.50cm 0.50cm;
+	grid-template-columns:0.50cm 0.50cm;
 }
 
-#casilla13 {
+.casilla_azul {
 	border-color: blue;
 	border-width: 4px;
+	grid-template-rows: 0.41cm 0.41cm;
+	grid-template-columns:0.41cm 0.41cm;
 }
 
-#casilla14 {
-	border-color: blue;
-	border-width: 4px;
-}
-
-#casilla11 {
-	border-color: blue;
-	border-width: 4px;
-}
-
-#casilla8 {
-	border-color: blue;
-	border-width: 4px;
-}
-
-#casilla5 {
-	border-color: blue;
-	border-width: 4px;
-}
-
-#casilla2 {
-	border-color: blue;
-	border-width: 4px;
-}
-
-#casilla20 {
+.casilla_amarilla {
 	border-color: yellow;
 	border-width: 4px;
+	grid-template-rows: 0.41cm 0.41cm;
+	grid-template-columns:0.41cm 0.41cm;
 }
 
-#casilla28 {
-	border-color: yellow;
-	border-width: 4px;
-}
-
-#casilla29 {
-	border-color: yellow;
-	border-width: 4px;
-}
-
-#casilla30 {
-	border-color: yellow;
-	border-width: 4px;
-}
-
-#casilla26 {
-	border-color: yellow;
-	border-width: 4px;
-}
-
-#casilla27 {
-	border-color: yellow;
-	border-width: 4px;
-}
-
-#casilla42 {
+.casilla_roja {
 	border-color: red;
 	border-width: 4px;
+	grid-template-rows: 0.41cm 0.41cm;
+	grid-template-columns:0.41cm 0.41cm;	
 }
 
-#casilla41 {
-	border-color: red;
-	border-width: 4px;
-}
-
-#casilla44 {
-	border-color: red;
-	border-width: 4px;
-}
-
-#casilla47 {
-	border-color: red;
-	border-width: 4px;
-}
-
-#casilla50 {
-	border-color:red;
-	border-width: 4px;
-}
-
-#casilla53 {
-	border-color: red;
-	border-width: 4px;
-}
-
-#casilla71 {
+.casilla_verde {
 	border-color: green;
-	border-width: 4px;
-}
-
-#casilla65 {
-	border-color: green;
-	border-width: 4px;
-}
-
-#casilla64 {
-	border-color: green;
-	border-width: 4px;
-}
-
-#casilla63 {
-	border-color: green;
-	border-width: 4px;
-}
-
-#casilla62 {
-	border-color: green;
-	border-width: 4px;
-}
-
-#casilla61 {
-	border-color: green;
-	border-width: 4px;
-}
+	border-width: 4px;	
+	grid-template-rows: 0.41cm 0.41cm;
+	grid-template-columns:0.41cm 0.41cm;
+}	
 
 .meta {
 	height: 3cm;
@@ -524,19 +435,12 @@ body {
 	background-color: black;
 }
 
-.BotonJugar:active {
-	display: none;
-}
 
 .Menu {
 	grid-row: 4 / 4;
 }
 
-.casilla {
-	display: grid;
-	grid-template-rows: 0.50cm 0.50cm;
-	grid-template-columns:0.50cm 0.50cm;
-}
+
 
 .puesto_casilla {
 	height: 90%;
@@ -548,7 +452,10 @@ body {
 	line-height: 2.2;
 }
 
-#puesto4-1 {
+/*#puesto4-42 {
 	background-color: red;
-} /*marcar color del puessto ocupado
+}*/
+
+
+
 
