@@ -267,14 +267,17 @@ body {
 	width: 1cm;
 	font-family: 'Press Start 2P', serif;
 	border-width: 2px;
-	transition-duration: 0.1s;
+	transition-duration: 1s;
 	margin-top: -6px;
+    position: relative;
+    bottom: 5px;
 }
-
 
 .Dado:active {
-	transform: rotate(360deg);
+	transform: rotate(1080deg);
 }
+
+
 
 
 .sector_inferior {
