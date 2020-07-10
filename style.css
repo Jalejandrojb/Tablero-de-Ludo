@@ -269,11 +269,13 @@ body {
 	border-width: 2px;
 	transition-duration: 1s;
 	margin-top: -6px;
-    position: relative;
+    /*position: relative;
     bottom: 5px;
+	propiedades para poner ensu lugar eldadocuando no carga elestilodel a letra
+    */ 
 }
 
-.Dado:active {
+.AnimacionDado {
 	transform: rotate(1080deg);
 }
 

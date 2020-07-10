@@ -3,8 +3,10 @@ var i = 1;
 class Ludo {
 	
 	constructor() {
+		this.tirarDado = this.tirarDado.bind(this)
 		this.botonJugar = document.getElementById('BotonInicio')
 		this.dado = document.getElementById('dado')
+		this.posDado = 1;
 		this.ocultarBoton()
 		this.habilitarDado()
 	}
@@ -19,10 +21,16 @@ class Ludo {
 
 	tirarDado() {
 		let x = Math.floor(Math.random() * 6) + 1
-		console.log(this)
-		this.innerHTML = x /*COMENTARIO: No logro acceder al DOM con la variable "dado", a laque se le asigno elelemento del dado*/
-		return x;
 
+		if (this.posDado === 1) {
+			this.dado.classList.add('AnimacionDado')
+			this.posDado = 0;
+		}else {
+			this.dado.classList.remove('AnimacionDado')
+			this.posDado = 1;
+		}
+		this.dado.innerHTML = x 
+		return x;
 	}
 }
 
