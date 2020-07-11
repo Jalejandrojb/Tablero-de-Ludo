@@ -6,13 +6,35 @@ class Ludo {
 		this.tirarDado = this.tirarDado.bind(this)
 		this.botonJugar = document.getElementById('BotonInicio')
 		this.dado = document.getElementById('dado')
-		this.posDado = 1;
+		this.posDado = 1
+		this.nCasillas = 52
+		this.obtenerCasillas()
 		this.ocultarBoton()
 		this.habilitarDado()
+
 	}
 
 	ocultarBoton() {
 		this.botonJugar.style.display="none"
+	}
+
+	obtenerCasillas() {
+		let i
+		this.casilla = [] //Verificar buena practica
+		this.casillaAzul = [] //Verificar buena practica
+		this.casillaAmarilla = [] //Verificar buena practica
+		this.casillaVerde = [] //Verificar buena practica
+		this.casillaRoja = [] //Verificar buena practica
+
+		for (i = 0; i < this.nCasillas; i++) {
+			this.casilla[i] = new Casilla(i)
+		}
+		for (i = 0; i < 5; i++) {
+			this.casillaAzul[i] = document.getElementById("casillaA" + (i + 1))
+			this.casillaAmarilla[i] = document.getElementById("casillaY" + (i + 1))
+			this.casillaRoja[i] = document.getElementById("casillaV" + (i + 1))
+			this.casillaVerde[i] = document.getElementById("casillaR" + (i + 1))
+		}		
 	}
 
 	habilitarDado() {
@@ -34,6 +56,21 @@ class Ludo {
 	}
 }
 
+class Casilla {
+	constructor(numero) {
+		this.lugar = document.getElementById("casilla" + (numero + 1))
+		this.pos1 = document.getElementById("puesto1-" + (numero + 1))
+		this.pos2 = document.getElementById("puesto2-" + (numero + 1))
+		this.pos3 = document.getElementById("puesto3-" + (numero + 1))
+		this.pos4 = document.getElementById("puesto4-" + (numero + 1))
+		this.cantidadPos1 = 0
+		this.cantidadPos1 = 0
+		this.cantidadPos1 = 0
+		this.cantidadPos1 = 0
+	}
+}
+
 function empezarPartida() {
 	const juego = new Ludo()
 }
+
