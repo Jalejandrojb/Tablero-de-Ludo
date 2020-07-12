@@ -6,7 +6,7 @@ class Ludo {
 		this.tirarDado = this.tirarDado.bind(this)
 		this.botonJugar = document.getElementById('BotonInicio')
 		this.dado = document.getElementById('dado')
-		this.posDado = 1
+		this.posDado = 1  //numero de referencia para la animacion del dado que varia entre 1 y 0
 		this.nCasillas = 52
 		this.obtenerCasillas()
 		this.ocultarBoton()
@@ -28,6 +28,7 @@ class Ludo {
 
 		for (i = 0; i < this.nCasillas; i++) {
 			this.casilla[i] = new Casilla(i)
+			console.log(this.casilla[i]) 
 		}
 		for (i = 0; i < 5; i++) {
 			this.casillaAzul[i] = document.getElementById("casillaA" + (i + 1))
