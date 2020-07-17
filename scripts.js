@@ -1,77 +1,94 @@
-var i = 1;
+/*declaracion de variables:
+<------------------------------------------------------------------>*/
 
-class Ludo {
+const casilla = [{}, {}, {}, {}, 
+{}, {}, {}, {}, {}, {}, 
+{}, {}, {}, {}, {}, {},
+{}, {}, {}, {}, {}, {},	//Arreglo que contiene los elementos HTML
+{}, {}, {}, {}, {}, {},	//que conforman las casillas blancas del trablero
+{}, {}, {}, {}, {}, {},
+{}, {}, {}, {}, {}, {},
+{}, {}, {}, {}, {}, {},
+{}, {}, {}, {}, {}, {}]
+const casillaAzul = [{}, {}, {}, {}, {}]
+const casillaAmarilla = [{}, {}, {}, {}, {}]	//Arreglos que contienen los elementos HTML
+const casillaRoja = [{}, {}, {}, {}, {}]		//que conforman las casillas de colores
+const casillaVerde = [{}, {}, {}, {}, {}]
+let dado = document.getElementById("dado")
+let botonJugar = document.getElementById("BotonInicio")
+let posDado = true	//valor de referencia para hacer girar el dado de izquierda a derecha
+
+obtenerCasillas()
+habilitarDado()
+
+
+
+
+
+
+/*definicion de funciones:
+<------------------------------------------------------------------>*/
+
+function ocultarBoton() {
+
+	botonJugar.style.display="none"
+
+} 
+
+function habilitarDado() {
+
+	dado.addEventListener('click', tirarDado)
+
+}
+
+function tirarDado() {
+
+	let x = Math.floor(Math.random() * 6) + 1  //genera un numero aleatorio entre 1 y 6
+
+	if (posDado === true) {
+		dado.classList.add('AnimacionDado')
+		posDado = false;
+	}else {
+		dado.classList.remove('AnimacionDado')
+		posDado = true;
+	}
+		dado.innerHTML = x	//cambia el contenido del dado al numero aleatorio en x
+		return x;	//retorna el numero aleatorio de la tirada
+
+}
+
+/*Funcion que almacena en los arreglos los elementos HTML,
+  que conforman las casillas y sus puestos*/
+function obtenerCasillas() {
+
+	const obtenerCasillaBlanca = (e, i, arr) => {						//callbacks para 'forEach()' 
+		arr[i].numero = document.getElementById("casilla" + (i + 1))
+		arr[i].puesto1 = document.getElementById("puesto1-" + (i + 1))
+		arr[i].puesto2 = document.getElementById("puesto2-" + (i + 1))	//almacena una casilla blanca i
+		arr[i].puesto3 = document.getElementById("puesto3-" + (i + 1))	//en un arreglo
+		arr[i].puesto4 = document.getElementById("puesto4-" + (i + 1))
+	}
+	const obtenerCasillaA = (e, i, arr) => {
+		arr[i].numero = document.getElementById("casillaA" + (i + 1))	//almacena una casilla Azul i
+		arr[i].puesto = document.getElementById("puesto1-A" + (i + 1))	//en un arreglo
+	}																	
+	const obtenerCasillaR = (e, i, arr) => {
+		arr[i].numero = document.getElementById("casillaR" + (i + 1))	//almacena una casilla Roja i
+		arr[i].puesto = document.getElementById("puesto1-R" + (i + 1))	//en un arreglo
+	}																	
+	const obtenerCasillaV = (e, i, arr) => {
+		arr[i].numero = document.getElementById("casillaV" + (i + 1))	//almacena una casilla Verde i
+		arr[i].puesto = document.getElementById("puesto1-V" + (i + 1))	//en un arreglo
+	}																	
+	const obtenerCasillaY = (e, i, arr) => {
+		arr[i].numero = document.getElementById("casillaY" + (i + 1))	//almacena una casilla Amarilla i
+		arr[i].puesto = document.getElementById("puesto1-Y" + (i + 1))	//en un arreglo																		//en un arreglo
+	}																	
 	
-	constructor() {
-		this.tirarDado = this.tirarDado.bind(this)
-		this.botonJugar = document.getElementById('BotonInicio')
-		this.dado = document.getElementById('dado')
-		this.posDado = 1  //numero de referencia para la animacion del dado que varia entre 1 y 0
-		this.nCasillas = 52
-		this.obtenerCasillas()
-		this.ocultarBoton()
-		this.habilitarDado()
+	casilla.forEach(obtenerCasillaBlanca)  //Llena el arreglo casilla con las casillas blancas
+	casillaAzul.forEach(obtenerCasillaA)	//Llena el arreglo casilla con las casillas azules
+	casillaRoja.forEach(obtenerCasillaR)	//Llena el arreglo casilla con las casillas rojas
+	casillaVerde.forEach(obtenerCasillaV)	//Llena el arreglo casilla con las casillas verdes
+	casillaAmarilla.forEach(obtenerCasillaY)	//Llena el arreglo casilla con las casillas amarillas
 
-	}
-
-	ocultarBoton() {
-		this.botonJugar.style.display="none"
-	}
-
-	obtenerCasillas() {
-		let i
-		this.casilla = [] //Verificar buena practica
-		this.casillaAzul = [] //Verificar buena practica
-		this.casillaAmarilla = [] //Verificar buena practica
-		this.casillaVerde = [] //Verificar buena practica
-		this.casillaRoja = [] //Verificar buena practica
-
-		for (i = 0; i < this.nCasillas; i++) {
-			this.casilla[i] = new Casilla(i)
-			console.log(this.casilla[i]) 
-		}
-		for (i = 0; i < 5; i++) {
-			this.casillaAzul[i] = document.getElementById("casillaA" + (i + 1))
-			this.casillaAmarilla[i] = document.getElementById("casillaY" + (i + 1))
-			this.casillaRoja[i] = document.getElementById("casillaV" + (i + 1))
-			this.casillaVerde[i] = document.getElementById("casillaR" + (i + 1))
-		}		
-	}
-
-	habilitarDado() {
-		this.dado.addEventListener('click', this.tirarDado)
-	}
-
-	tirarDado() {
-		let x = Math.floor(Math.random() * 6) + 1
-
-		if (this.posDado === 1) {
-			this.dado.classList.add('AnimacionDado')
-			this.posDado = 0;
-		}else {
-			this.dado.classList.remove('AnimacionDado')
-			this.posDado = 1;
-		}
-		this.dado.innerHTML = x 
-		return x;
-	}
 }
-
-class Casilla {
-	constructor(numero) {
-		this.lugar = document.getElementById("casilla" + (numero + 1))
-		this.pos1 = document.getElementById("puesto1-" + (numero + 1))
-		this.pos2 = document.getElementById("puesto2-" + (numero + 1))
-		this.pos3 = document.getElementById("puesto3-" + (numero + 1))
-		this.pos4 = document.getElementById("puesto4-" + (numero + 1))
-		this.cantidadPos1 = 0
-		this.cantidadPos1 = 0
-		this.cantidadPos1 = 0
-		this.cantidadPos1 = 0
-	}
-}
-
-function empezarPartida() {
-	const juego = new Ludo()
-}
-
