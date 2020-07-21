@@ -20,86 +20,80 @@ const casillaVerde = [{}, {}, {}, {}, {}]
 
 //Objetos que representan a los jugadores
 const jugadorAzul = {
-	ficha1: null,
-	ficha2: null,
-	ficha3: null,
-	ficha4: null,
-	respawn1: document.getElementById("respawnAzul1"),
-	respawn2: document.getElementById("respawnAzul2"),
-	respawn3: document.getElementById("respawnAzul3"),
-	respawn4: document.getElementById("respawnAzul4"),
+	posFicha1: null,
+	posFicha2: null,
+	posFicha3: null,
+	posFicha4: null,
+	ficha1: document.getElementById("piezaAzul1"),
+	ficha2: document.getElementById("piezaAzul2"),
+	ficha3: document.getElementById("piezaAzul3"),
+	ficha4: document.getElementById("piezaAzul4"),
 	salida: 0,
 	meta: 50,
 	puntos: 0,
 	marcador: document.getElementById("marcadorAzul"),
-	numeroJugador: 1
 }
 
 const jugadorAmarillo = {
-	ficha1: null,
-	ficha2: null,
-	ficha3: null,
-	ficha4: null,
-	respawn1: document.getElementById("respawnAmarillo1"),
-	respawn2: document.getElementById("respawnAmarillo2"),
-	respawn3: document.getElementById("respawnAmarillo3"),
-	respawn4: document.getElementById("respawnAmarillo4"),
+	posFicha1: null,
+	posFicha2: null,
+	posFicha3: null,
+	posFicha4: null,
+	ficha1: document.getElementById("piezaAmarilla1"),
+	ficha2: document.getElementById("piezaAmarilla2"),
+	ficha3: document.getElementById("piezaAmarilla3"),
+	ficha4: document.getElementById("piezaAmarilla4"),
 	salida: 13,
 	meta: 11,
 	puntos: 0,
 	marcador: document.getElementById("marcadorAmarillo"),
-	numeroJugador: 2
 }
 
 const jugadorRojo = {
-	ficha1: null,
-	ficha2: null,
-	ficha3: null,
-	ficha4: null,
-	respawn1: document.getElementById("respawnRojo1"),
-	respawn2: document.getElementById("respawnRojo2"),
-	respawn3: document.getElementById("respawnRojo3"),
-	respawn4: document.getElementById("respawnRojo4"),
+	posFicha1: null,
+	posFicha2: null,
+	posFicha3: null,
+	posFicha4: null,
+	ficha1: document.getElementById("piezaRoja1"),
+	ficha2: document.getElementById("piezaRoja2"),
+	ficha3: document.getElementById("piezaRoja3"),
+	ficha4: document.getElementById("piezaRoja4"),
 	salida: 26,
 	meta: 24,
 	puntos: 0,
 	marcador: document.getElementById("marcadorRojo"),
-	numeroJugador: 3
 }
 
 const jugadorVerde = {
-	ficha1: null,
-	ficha2: null,
-	ficha3: null,
-	ficha4: null,
-	respawn1: document.getElementById("respawnVerde1"),
-	respawn2: document.getElementById("respawnVerde2"),
-	respawn3: document.getElementById("respawnVerde3"),
-	respawn4: document.getElementById("respawnVerde4"),
+	posFicha1: null,
+	posFicha2: null,
+	posFicha3: null,
+	posFicha4: null,
+	ficha1: document.getElementById("piezaVerde1"),
+	ficha2: document.getElementById("piezaVerde2"),
+	ficha3: document.getElementById("piezaVerde3"),
+	ficha4: document.getElementById("piezaVerde4"),
 	salida: 39,
 	meta: 37,
 	puntos: 0,
 	marcador: document.getElementById("marcadorVerde"),
-	numeroJugador: 4
 }
-
-
 
 const dado = document.getElementById("dado")
 const botonJugar = document.getElementById("BotonInicio")
-let posDado = true	//valor de referencia para hacer girar el dado de izquierda a derecha
+let posDado = true		//valor de referencia para hacer girar el dado de izquierda a derecha
+let turno = 1		//referencia para establecer a quien le toca jugar
 
-
-obtenerCasillas()
-habilitarDado()
+obtenerCasillas()	//funcion que llena los arreglos con los elmentos HTML casillas 	
 
 
 /*definicion de funciones:
 <------------------------------------------------------------------>*/
 
-function ocultarBoton() {
+function empezarPartida() {
 
 	botonJugar.style.display="none"
+	habilitarDado()
 
 } 
 
@@ -109,7 +103,35 @@ function habilitarDado() {
 
 }
 
+function deshabilitarDado() {
+
+	dado.removeEventListener('click', tirarDado)
+
+}
+
 function tirarDado() {
+
+	let tirada = lanzamiento() //regresa el valor de la tirada (entre 1 y 6)
+
+	switch (turno) {		
+		case 1:
+			habilitarFichas(jugadorAzul)
+			break;
+		case 2:
+			habilitarFichas(jugadorAmarillo)
+			break;
+		case 3:
+			habilitarFichas(jugadorRojo)
+			break;
+		case 4:
+			habilitarFichas(jugadorVerde)
+			break;		
+	}
+	
+
+}
+
+function lanzamiento() {
 
 	let x = Math.floor(Math.random() * 6) + 1  //genera un numero aleatorio entre 1 y 6
 
@@ -120,9 +142,34 @@ function tirarDado() {
 		dado.classList.remove('AnimacionDado')
 		posDado = true;
 	}
-		dado.innerHTML = x	//cambia el contenido del dado al numero aleatorio en x
-		return x;	//retorna el numero aleatorio de la tirada
 
+	deshabilitarDado()
+	dado.innerHTML = x	//cambia el contenido del dado al numero aleatorio en x
+	return x;	//retorna el numero aleatorio de la tirada
+
+}
+
+/*Funcion que habilita las fichas en la base del jugador de turno. 
+Esta funcion se llama cada vez que se 'tira dado'*/
+function habilitarFichas(jugador) {
+
+		jugador.ficha1.addEventListener('click', () => {
+			jugador.ficha1.style.visibility = 'hidden'
+			turno = turno + 1
+			habilitarDado()
+		})
+
+		jugador.ficha2.addEventListener('click', () => {
+			jugador.ficha2.style.visibility = 'hidden'
+		})
+
+		jugador.ficha3.addEventListener('click', () => {
+			jugador.ficha3.style.visibility = 'hidden'
+		})
+
+		jugador.ficha4.addEventListener('click', () => {
+			jugador.ficha4.style.visibility = 'hidden'
+		})
 }
 
 /*Funcion que almacena en los arreglos los elementos HTML,
