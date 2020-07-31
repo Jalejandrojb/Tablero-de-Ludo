@@ -101,7 +101,7 @@ function jugar() {
 
 	let tirada = tirarDado() //regresa el valor de la tirada (entre 1 y 6)
 
-	switch (turno) {		
+	switch (turno) {	//habilitado para que solo juegue el jugador azul	
 		case 1:
 			habilitarFichas(jugadorAzul)
 			break;
@@ -141,50 +141,27 @@ para que salgan de la base
 Esta funcion se llama cada vez que se 'tira dado'*/
 function habilitarFichas(jugador) {
 
-	const habilitar1 = () => {		//funcion que se habilitara al darle click a la ficha 1 en base
-		jugador.ficha1.classList.add('hidden')
-		jugador.ficha1.removeEventListener('click', habilitar1)
-		jugador.ficha2.removeEventListener('click', habilitar2)		//deshabilita las otras fichas 
-		jugador.ficha3.removeEventListener('click', habilitar3)		//despues de haberle dado click a una
-		jugador.ficha4.removeEventListener('click', habilitar4)
-		ponerFicha(jugador, jugador.salida, jugador.ficha1)		//funcion que marca una ficha en una casilla 
-																	//(en este casi en la casilla de salida)
-	}
+	const sacarFicha = (ficha) => {
 
-	const habilitar2 = () => {		//funcion que se habilitara al darle click a la ficha 2 en base
-		jugador.ficha2.classList.add('hidden')
+		ficha.classList.add('hidden')	//se oculta la ficha que se paso como parametro
 		jugador.ficha1.removeEventListener('click', habilitar1)
-		jugador.ficha2.removeEventListener('click', habilitar2)
-		jugador.ficha3.removeEventListener('click', habilitar3)
+		jugador.ficha2.removeEventListener('click', habilitar2)		//se anula el listerner 
+		jugador.ficha3.removeEventListener('click', habilitar3)		//de todas las fichas
 		jugador.ficha4.removeEventListener('click', habilitar4)
-		ponerFicha(jugador, jugador.salida, jugador.ficha2)
+		ponerFicha(jugador, jugador.salida, ficha)		//funcion que marca la ficha en la posicion de salida del jugador de turno
 
 	}
 
-	const habilitar3 = () => {		//funcion que se habilitara al darle click a la ficha 3 en base
-		jugador.ficha3.classList.add('hidden')
-		jugador.ficha1.removeEventListener('click', habilitar1)
-		jugador.ficha2.removeEventListener('click', habilitar2)
-		jugador.ficha3.removeEventListener('click', habilitar3)
-		jugador.ficha4.removeEventListener('click', habilitar4)
-		ponerFicha(jugador, jugador.salida, jugador.ficha3)
+	const habilitar1 = () => sacarFicha(jugador.ficha1)
+	const habilitar2 = () => sacarFicha(jugador.ficha2)			//funciones que llaman 
+	const habilitar3 = () => sacarFicha(jugador.ficha3)			//con diferentes parametros
+	const habilitar4 = () => sacarFicha(jugador.ficha4)			//a sacar ficha
 
-	}
-
-	const habilitar4 = () => {		//funcion que se habilitara al darle click a la ficha 4 en base
-		jugador.ficha4.classList.add('hidden')
-		jugador.ficha1.removeEventListener('click', habilitar1)
-		jugador.ficha2.removeEventListener('click', habilitar2)
-		jugador.ficha3.removeEventListener('click', habilitar3)
-		jugador.ficha4.removeEventListener('click', habilitar4)
-		ponerFicha(jugador, jugador.salida, jugador.ficha4)
-
-	}
-
-	jugador.ficha1.addEventListener('click', habilitar1)		
+	jugador.ficha1.addEventListener('click', habilitar1)
 	jugador.ficha2.addEventListener('click', habilitar2)		//se habilitan las funciones 
 	jugador.ficha3.addEventListener('click', habilitar3)		//al darle click a las fichas
 	jugador.ficha4.addEventListener('click', habilitar4)
+
 }
 
 //funcion que pone una ficha en el tablero, 
@@ -193,7 +170,7 @@ function ponerFicha(jugador, i, ficha) {
 
 	/*funcion a la que se le va a pasar el puesto de la casilla
 	donde corresponde poner la ficha, y lo marca en el tablero*/
-	let marcarFicha = (fichasPuesto, puesto) => {
+	const marcarFicha = (fichasPuesto, puesto) => {
 
 		fichasPuesto.push(ficha)
 		if (fichasPuesto.length === 1) {  //Si es la primera ficha en el puesto:
@@ -205,6 +182,8 @@ function ponerFicha(jugador, i, ficha) {
 
 	}
 
+	/*En este fragmento de codigo se decide que posicion sera enviada como parametro
+	a la funcion 'marcasFicha', para marcar la ficha en esa posicion de la casillaa[i]*/
 	if (casilla[i].fichasPuesto1.length === 0 ||  //Si no hay ninguna ficha en el puesto 1
 	casilla[i].puesto1.style.backgroundColor === jugador.color) { //O si el puesto 1 esta ocupado por una ficha del mismo color
 		marcarFicha(casilla[i].fichasPuesto1, casilla[i].puesto1)
@@ -254,18 +233,22 @@ function obtenerCasillas() {
 		arr[i].fichasPuesto3 = []
 		arr[i].fichasPuesto4 = []
 	}
+
 	const obtenerCasillaA = (e, i, arr) => {
 		arr[i].Casilla = document.getElementById("casillaA" + (i + 1))	//almacena una casilla Azul i
 		arr[i].puesto = document.getElementById("puesto1-A" + (i + 1))	//en un arreglo
-	}																	
+	}	
+
 	const obtenerCasillaR = (e, i, arr) => {
 		arr[i].numeroCasilla = document.getElementById("casillaR" + (i + 1))	//almacena una casilla Roja i
 		arr[i].puesto = document.getElementById("puesto1-R" + (i + 1))	//en un arreglo
-	}																	
+	}	
+
 	const obtenerCasillaV = (e, i, arr) => {
 		arr[i].numeroCasilla = document.getElementById("casillaV" + (i + 1))	//almacena una casilla Verde i
 		arr[i].puesto = document.getElementById("puesto1-V" + (i + 1))	//en un arreglo
-	}																	
+	}	
+
 	const obtenerCasillaY = (e, i, arr) => {
 		arr[i].numeroCasilla = document.getElementById("casillaY" + (i + 1))	//almacena una casilla Amarilla i
 		arr[i].puesto = document.getElementById("puesto1-Y" + (i + 1))	//en un arreglo																		//en un arreglo
