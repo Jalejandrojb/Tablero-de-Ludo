@@ -2,8 +2,8 @@
 <------------------------------------------------------------------>*/
 
 //Arreglos que contienen los elementos HTML que conforman las casillas 
-const casilla = [
-{}, {}, {}, {}, {}, {}, 
+const casilla = 
+[{}, {}, {}, {}, {}, {}, 
 {}, {}, {}, {}, {}, {}, 
 {}, {}, {}, {}, {}, {},
 {}, {}, {}, {}, {}, {},	//Arreglo que contiene los elementos HTML
@@ -20,10 +20,7 @@ const casillaVerde = [{}, {}, {}, {}, {}]
 
 //Objetos que representan a los jugadores
 const jugadorAzul = {
-	posFicha1: null,
-	posFicha2: null,
-	posFicha3: null,
-	posFicha4: null,
+	color: 'blue',
 	ficha1: document.getElementById("piezaAzul1"),
 	ficha2: document.getElementById("piezaAzul2"),
 	ficha3: document.getElementById("piezaAzul3"),
@@ -35,10 +32,7 @@ const jugadorAzul = {
 }
 
 const jugadorAmarillo = {
-	posFicha1: null,
-	posFicha2: null,
-	posFicha3: null,
-	posFicha4: null,
+	color: 'yellow',
 	ficha1: document.getElementById("piezaAmarilla1"),
 	ficha2: document.getElementById("piezaAmarilla2"),
 	ficha3: document.getElementById("piezaAmarilla3"),
@@ -50,10 +44,7 @@ const jugadorAmarillo = {
 }
 
 const jugadorRojo = {
-	posFicha1: null,
-	posFicha2: null,
-	posFicha3: null,
-	posFicha4: null,
+	color: 'red',
 	ficha1: document.getElementById("piezaRoja1"),
 	ficha2: document.getElementById("piezaRoja2"),
 	ficha3: document.getElementById("piezaRoja3"),
@@ -65,10 +56,7 @@ const jugadorRojo = {
 }
 
 const jugadorVerde = {
-	posFicha1: null,
-	posFicha2: null,
-	posFicha3: null,
-	posFicha4: null,
+	color: 'green',
 	ficha1: document.getElementById("piezaVerde1"),
 	ficha2: document.getElementById("piezaVerde2"),
 	ficha3: document.getElementById("piezaVerde3"),
@@ -99,19 +87,19 @@ function empezarPartida() {
 
 function habilitarDado() {
 
-	dado.addEventListener('click', tirarDado)
+	dado.addEventListener('click', jugar)
 
 }
 
 function deshabilitarDado() {
 
-	dado.removeEventListener('click', tirarDado)
+	dado.removeEventListener('click', jugar)
 
 }
 
-function tirarDado() {
+function jugar() {
 
-	let tirada = lanzamiento() //regresa el valor de la tirada (entre 1 y 6)
+	let tirada = tirarDado() //regresa el valor de la tirada (entre 1 y 6)
 
 	switch (turno) {		
 		case 1:
@@ -131,7 +119,7 @@ function tirarDado() {
 
 }
 
-function lanzamiento() {
+function tirarDado() {
 
 	let x = Math.floor(Math.random() * 6) + 1  //genera un numero aleatorio entre 1 y 6
 
@@ -143,33 +131,112 @@ function lanzamiento() {
 		posDado = true;
 	}
 
-	deshabilitarDado()
 	dado.innerHTML = x	//cambia el contenido del dado al numero aleatorio en x
 	return x;	//retorna el numero aleatorio de la tirada
 
 }
 
-/*Funcion que habilita las fichas en la base del jugador de turno. 
+/*Funcion que habilita las fichas en la base del jugador de turno
+para que salgan de la base 
 Esta funcion se llama cada vez que se 'tira dado'*/
 function habilitarFichas(jugador) {
 
-		jugador.ficha1.addEventListener('click', () => {
-			jugador.ficha1.style.visibility = 'hidden'
-			turno = turno + 1
-			habilitarDado()
-		})
+	const habilitar1 = () => {		//funcion que se habilitara al darle click a la ficha 1 en base
+		jugador.ficha1.classList.add('hidden')
+		jugador.ficha1.removeEventListener('click', habilitar1)
+		jugador.ficha2.removeEventListener('click', habilitar2)		//deshabilita las otras fichas 
+		jugador.ficha3.removeEventListener('click', habilitar3)		//despues de haberle dado click a una
+		jugador.ficha4.removeEventListener('click', habilitar4)
+		ponerFicha(jugador, jugador.salida, jugador.ficha1)		//funcion que marca una ficha en una casilla 
+																	//(en este casi en la casilla de salida)
+	}
 
-		jugador.ficha2.addEventListener('click', () => {
-			jugador.ficha2.style.visibility = 'hidden'
-		})
+	const habilitar2 = () => {		//funcion que se habilitara al darle click a la ficha 2 en base
+		jugador.ficha2.classList.add('hidden')
+		jugador.ficha1.removeEventListener('click', habilitar1)
+		jugador.ficha2.removeEventListener('click', habilitar2)
+		jugador.ficha3.removeEventListener('click', habilitar3)
+		jugador.ficha4.removeEventListener('click', habilitar4)
+		ponerFicha(jugador, jugador.salida, jugador.ficha2)
 
-		jugador.ficha3.addEventListener('click', () => {
-			jugador.ficha3.style.visibility = 'hidden'
-		})
+	}
 
-		jugador.ficha4.addEventListener('click', () => {
-			jugador.ficha4.style.visibility = 'hidden'
-		})
+	const habilitar3 = () => {		//funcion que se habilitara al darle click a la ficha 3 en base
+		jugador.ficha3.classList.add('hidden')
+		jugador.ficha1.removeEventListener('click', habilitar1)
+		jugador.ficha2.removeEventListener('click', habilitar2)
+		jugador.ficha3.removeEventListener('click', habilitar3)
+		jugador.ficha4.removeEventListener('click', habilitar4)
+		ponerFicha(jugador, jugador.salida, jugador.ficha3)
+
+	}
+
+	const habilitar4 = () => {		//funcion que se habilitara al darle click a la ficha 4 en base
+		jugador.ficha4.classList.add('hidden')
+		jugador.ficha1.removeEventListener('click', habilitar1)
+		jugador.ficha2.removeEventListener('click', habilitar2)
+		jugador.ficha3.removeEventListener('click', habilitar3)
+		jugador.ficha4.removeEventListener('click', habilitar4)
+		ponerFicha(jugador, jugador.salida, jugador.ficha4)
+
+	}
+
+	jugador.ficha1.addEventListener('click', habilitar1)		
+	jugador.ficha2.addEventListener('click', habilitar2)		//se habilitan las funciones 
+	jugador.ficha3.addEventListener('click', habilitar3)		//al darle click a las fichas
+	jugador.ficha4.addEventListener('click', habilitar4)
+}
+
+//funcion que pone una ficha en el tablero, 
+//teniendo en cuenta las fichas aliadas y enemigas
+function ponerFicha(jugador, i, ficha) {
+
+	/*funcion a la que se le va a pasar el puesto de la casilla
+	donde corresponde poner la ficha, y lo marca en el tablero*/
+	let marcarFicha = (fichasPuesto, puesto) => {
+
+		fichasPuesto.push(ficha)
+		if (fichasPuesto.length === 1) {  //Si es la primera ficha en el puesto:
+			puesto.style.backgroundColor = jugador.color		//marca el color
+		}
+		else {							 //Si es la segunda ficha o mayor en la casilla:
+			puesto.innerHTML = fichasPuesto.length		//marca el numero de fichas en el puesto 
+		}
+
+	}
+
+	if (casilla[i].fichasPuesto1.length === 0 ||  //Si no hay ninguna ficha en el puesto 1
+	casilla[i].puesto1.style.backgroundColor === jugador.color) { //O si el puesto 1 esta ocupado por una ficha del mismo color
+		marcarFicha(casilla[i].fichasPuesto1, casilla[i].puesto1)
+	}
+	else if (casilla[i].fichasPuesto2.length === 0 ||  //Si no hay ninguna ficha en el puesto 2
+	casilla[i].puesto2.style.backgroundColor === jugador.color) { //O si el puesto 2 esta ocupado por una ficha del mismo color
+		marcarFicha(casilla[i].fichasPuesto2, casilla[i].puesto2)
+	}
+	else if (casilla[i].fichasPuesto3.length === 0 ||  //Si no hay ninguna ficha en el puesto 3
+	casilla[i].puesto3.style.backgroundColor === jugador.color) { //O si el puesto 3 esta ocupado por una ficha del mismo color
+		marcarFicha(casilla[i].fichasPuesto3, casilla[i].puesto3)
+	}
+	else if (casilla[i].fichasPuesto4.length === 0 ||  ////Si no hay ninguna ficha en el puesto 4
+	casilla[i].puesto4.style.backgroundColor === jugador.color) {  //O si el puesto 3 esta ocupado por una ficha del mismo color
+		marcarFicha(casilla[i].fichasPuesto4, casilla[i].puesto4)
+	} 
+
+}
+
+function quitarFicha(i) {
+
+	casilla[i].puesto1.style.backgroundColor = 'white'
+
+}
+
+//Funcion que hace pasar los turnos de los jugadores, cada jugador esta representado en un numero
+function siguienteTurno() {
+
+	turno++
+	if (turno === 5)
+		turno = 1
+
 }
 
 /*Funcion que almacena en los arreglos los elementos HTML,
@@ -177,26 +244,30 @@ function habilitarFichas(jugador) {
 function obtenerCasillas() {
 
 	const obtenerCasillaBlanca = (e, i, arr) => {						//callbacks para 'forEach()' 
-		arr[i].numero = document.getElementById("casilla" + (i + 1))
+		arr[i].numeroCasilla = document.getElementById("casilla" + (i + 1))
 		arr[i].puesto1 = document.getElementById("puesto1-" + (i + 1))
 		arr[i].puesto2 = document.getElementById("puesto2-" + (i + 1))	//almacena una casilla blanca i
 		arr[i].puesto3 = document.getElementById("puesto3-" + (i + 1))	//en un arreglo
 		arr[i].puesto4 = document.getElementById("puesto4-" + (i + 1))
+		arr[i].fichasPuesto1 = []
+		arr[i].fichasPuesto2 = []
+		arr[i].fichasPuesto3 = []
+		arr[i].fichasPuesto4 = []
 	}
 	const obtenerCasillaA = (e, i, arr) => {
-		arr[i].numero = document.getElementById("casillaA" + (i + 1))	//almacena una casilla Azul i
+		arr[i].Casilla = document.getElementById("casillaA" + (i + 1))	//almacena una casilla Azul i
 		arr[i].puesto = document.getElementById("puesto1-A" + (i + 1))	//en un arreglo
 	}																	
 	const obtenerCasillaR = (e, i, arr) => {
-		arr[i].numero = document.getElementById("casillaR" + (i + 1))	//almacena una casilla Roja i
+		arr[i].numeroCasilla = document.getElementById("casillaR" + (i + 1))	//almacena una casilla Roja i
 		arr[i].puesto = document.getElementById("puesto1-R" + (i + 1))	//en un arreglo
 	}																	
 	const obtenerCasillaV = (e, i, arr) => {
-		arr[i].numero = document.getElementById("casillaV" + (i + 1))	//almacena una casilla Verde i
+		arr[i].numeroCasilla = document.getElementById("casillaV" + (i + 1))	//almacena una casilla Verde i
 		arr[i].puesto = document.getElementById("puesto1-V" + (i + 1))	//en un arreglo
 	}																	
 	const obtenerCasillaY = (e, i, arr) => {
-		arr[i].numero = document.getElementById("casillaY" + (i + 1))	//almacena una casilla Amarilla i
+		arr[i].numeroCasilla = document.getElementById("casillaY" + (i + 1))	//almacena una casilla Amarilla i
 		arr[i].puesto = document.getElementById("puesto1-Y" + (i + 1))	//en un arreglo																		//en un arreglo
 	}																	
 	

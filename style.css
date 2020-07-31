@@ -457,8 +457,8 @@ body {
 	line-height: 2.2;
 }
 
-.colorrr {
-	background-color: red;
+.hidden {
+	visibility: hidden;
 }
 
 
