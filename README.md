@@ -9,4 +9,3 @@ Creado a base de CSS y Js.
 4. Dar click a alguna ficha de la esquina azul para sacarla de base
 5. Se puede lanzar de dado de nuevo para sacar otra ficha
 6. copiar y pegar la funcion **"ponerFicha(jugadorAmarillo, 0, jugadorAmarillo.ficha1)"** en la consola del browser para poner una ficha amarilla en la salida de azul (se puede hacer varias veces, y antes de tirar dados)
-
