@@ -2,29 +2,19 @@
 <------------------------------------------------------------------>*/
 
 //Arreglos que contienen los elementos HTML que conforman las casillas 
-const casilla = 
-[{}, {}, {}, {}, {}, {}, 
-{}, {}, {}, {}, {}, {}, 
-{}, {}, {}, {}, {}, {},
-{}, {}, {}, {}, {}, {},	//Arreglo que contiene los elementos HTML
-{}, {}, {}, {}, {}, {},	//que conforman las casillas blancas del trablero
-{}, {}, {}, {}, {}, {},
-{}, {}, {}, {}, {}, {},
-{}, {}, {}, {}, {}, {},
-{}, {}, {}, {}]
-
-const casillaAzul = [{}, {}, {}, {}, {}]
-const casillaAmarilla = [{}, {}, {}, {}, {}]	//Arreglos que contienen los elementos HTML
-const casillaRoja = [{}, {}, {}, {}, {}]		//que conforman las casillas de colores
-const casillaVerde = [{}, {}, {}, {}, {}]
+const casilla = Array(52).fill(null).map(e => ({}))
+const casillaAzul = Array(5).fill(null).map(e => ({}))
+const casillaAmarilla = Array(5).fill(null).map(e => ({}))
+const casillaRoja = Array(5).fill(null).map(e => ({}))		
+const casillaVerde = Array(5).fill(null).map(e => ({}))
 
 //Objetos que representan a los jugadores
 const jugadorAzul = {
 	color: 'blue',
-	ficha1: document.getElementById("piezaAzul1"),
-	ficha2: document.getElementById("piezaAzul2"),
-	ficha3: document.getElementById("piezaAzul3"),
-	ficha4: document.getElementById("piezaAzul4"),
+	ficha: [document.getElementById("piezaAzul1"),
+	document.getElementById("piezaAzul2"),
+	document.getElementById("piezaAzul3"),
+	document.getElementById("piezaAzul4")],
 	salida: 0,
 	meta: 50,
 	puntos: 0,
@@ -33,10 +23,10 @@ const jugadorAzul = {
 
 const jugadorAmarillo = {
 	color: 'yellow',
-	ficha1: document.getElementById("piezaAmarilla1"),
-	ficha2: document.getElementById("piezaAmarilla2"),
-	ficha3: document.getElementById("piezaAmarilla3"),
-	ficha4: document.getElementById("piezaAmarilla4"),
+	ficha: [document.getElementById("piezaAmarilla1"),
+	document.getElementById("piezaAmarilla2"),
+	document.getElementById("piezaAmarilla3"),
+	document.getElementById("piezaAmarilla4")],
 	salida: 13,
 	meta: 11,
 	puntos: 0,
@@ -45,10 +35,10 @@ const jugadorAmarillo = {
 
 const jugadorRojo = {
 	color: 'red',
-	ficha1: document.getElementById("piezaRoja1"),
-	ficha2: document.getElementById("piezaRoja2"),
-	ficha3: document.getElementById("piezaRoja3"),
-	ficha4: document.getElementById("piezaRoja4"),
+	ficha: [document.getElementById("piezaRoja1"),
+	document.getElementById("piezaRoja2"),
+	document.getElementById("piezaRoja3"),
+	document.getElementById("piezaRoja4")],
 	salida: 26,
 	meta: 24,
 	puntos: 0,
@@ -57,10 +47,10 @@ const jugadorRojo = {
 
 const jugadorVerde = {
 	color: 'green',
-	ficha1: document.getElementById("piezaVerde1"),
-	ficha2: document.getElementById("piezaVerde2"),
-	ficha3: document.getElementById("piezaVerde3"),
-	ficha4: document.getElementById("piezaVerde4"),
+	ficha: [document.getElementById("piezaVerde1"),
+	document.getElementById("piezaVerde2"),
+	document.getElementById("piezaVerde3"),
+	document.getElementById("piezaVerde4")],
 	salida: 39,
 	meta: 37,
 	puntos: 0,
@@ -144,23 +134,25 @@ function habilitarFichas(jugador) {
 	const sacarFicha = (ficha) => {
 
 		ficha.classList.add('hidden')	//se oculta la ficha que se paso como parametro
-		jugador.ficha1.removeEventListener('click', habilitar1)
-		jugador.ficha2.removeEventListener('click', habilitar2)		//se anula el listerner 
-		jugador.ficha3.removeEventListener('click', habilitar3)		//de todas las fichas
-		jugador.ficha4.removeEventListener('click', habilitar4)
+		jugador.ficha[0].removeEventListener('click', habilitar[0])
+		jugador.ficha[1].removeEventListener('click', habilitar[1])		//se anula el listerner 
+		jugador.ficha[2].removeEventListener('click', habilitar[2])		//de todas las fichas
+		jugador.ficha[3].removeEventListener('click', habilitar[3])
 		ponerFicha(jugador, jugador.salida, ficha)		//funcion que marca la ficha en la posicion de salida del jugador de turno
 
 	}
 
-	const habilitar1 = () => sacarFicha(jugador.ficha1)
-	const habilitar2 = () => sacarFicha(jugador.ficha2)			//funciones que llaman 
-	const habilitar3 = () => sacarFicha(jugador.ficha3)			//con diferentes parametros
-	const habilitar4 = () => sacarFicha(jugador.ficha4)			//a sacar ficha
+	const habilitar = [
+		() => sacarFicha(jugador.ficha[0]),
+		() => sacarFicha(jugador.ficha[1]),
+		() => sacarFicha(jugador.ficha[2]),
+		() => sacarFicha(jugador.ficha[3])
+	] 
 
-	jugador.ficha1.addEventListener('click', habilitar1)
-	jugador.ficha2.addEventListener('click', habilitar2)		//se habilitan las funciones 
-	jugador.ficha3.addEventListener('click', habilitar3)		//al darle click a las fichas
-	jugador.ficha4.addEventListener('click', habilitar4)
+	jugador.ficha[0].addEventListener('click', habilitar[0])
+	jugador.ficha[1].addEventListener('click', habilitar[1])		//se habilitan las funciones 
+	jugador.ficha[2].addEventListener('click', habilitar[2])		//al darle click a las fichas
+	jugador.ficha[3].addEventListener('click', habilitar[3])
 
 }
 
@@ -170,35 +162,35 @@ function ponerFicha(jugador, i, ficha) {
 
 	/*funcion a la que se le va a pasar el puesto de la casilla
 	donde corresponde poner la ficha, y lo marca en el tablero*/
-	const marcarFicha = (fichasPuesto, puesto) => {
+	const marcarFicha = (fichasEnPuesto, puesto) => {
 
-		fichasPuesto.push(ficha)
-		if (fichasPuesto.length === 1) {  //Si es la primera ficha en el puesto:
+		fichasEnPuesto.push(ficha)
+		if (fichasEnPuesto.length === 1) {  //Si es la primera ficha en el puesto:
 			puesto.style.backgroundColor = jugador.color		//marca el color
 		}
 		else {							 //Si es la segunda ficha o mayor en la casilla:
-			puesto.innerHTML = fichasPuesto.length		//marca el numero de fichas en el puesto 
+			puesto.innerHTML = fichasEnPuesto.length		//marca el numero de fichas en el puesto 
 		}
 
 	}
 
 	/*En este fragmento de codigo se decide que posicion sera enviada como parametro
 	a la funcion 'marcasFicha', para marcar la ficha en esa posicion de la casillaa[i]*/
-	if (casilla[i].fichasPuesto1.length === 0 ||  //Si no hay ninguna ficha en el puesto 1
-	casilla[i].puesto1.style.backgroundColor === jugador.color) { //O si el puesto 1 esta ocupado por una ficha del mismo color
-		marcarFicha(casilla[i].fichasPuesto1, casilla[i].puesto1)
+	if (casilla[i].fichasEnPuesto[0].length === 0 ||  	//Si no hay ninguna ficha en el puesto 1
+	casilla[i].puesto[0].style.backgroundColor === jugador.color) { //O si el puesto 1 esta ocupado por una ficha del mismo color
+		marcarFicha(casilla[i].fichasEnPuesto[0], casilla[i].puesto[0])
 	}
-	else if (casilla[i].fichasPuesto2.length === 0 ||  //Si no hay ninguna ficha en el puesto 2
-	casilla[i].puesto2.style.backgroundColor === jugador.color) { //O si el puesto 2 esta ocupado por una ficha del mismo color
-		marcarFicha(casilla[i].fichasPuesto2, casilla[i].puesto2)
+	else if (casilla[i].fichasEnPuesto[1].length === 0 ||  //Si no hay ninguna ficha en el puesto 2
+	casilla[i].puesto[1].style.backgroundColor === jugador.color) { //O si el puesto 2 esta ocupado por una ficha del mismo color
+		marcarFicha(casilla[i].fichasEnPuesto[1], casilla[i].puesto[1])
 	}
-	else if (casilla[i].fichasPuesto3.length === 0 ||  //Si no hay ninguna ficha en el puesto 3
-	casilla[i].puesto3.style.backgroundColor === jugador.color) { //O si el puesto 3 esta ocupado por una ficha del mismo color
-		marcarFicha(casilla[i].fichasPuesto3, casilla[i].puesto3)
+	else if (casilla[i].fichasEnPuesto[2].length === 0 ||  //Si no hay ninguna ficha en el puesto 3
+	casilla[i].puesto[2].style.backgroundColor === jugador.color) { //O si el puesto 3 esta ocupado por una ficha del mismo color
+		marcarFicha(casilla[i].fichasEnPuesto[2], casilla[i].puesto[2])
 	}
-	else if (casilla[i].fichasPuesto4.length === 0 ||  ////Si no hay ninguna ficha en el puesto 4
-	casilla[i].puesto4.style.backgroundColor === jugador.color) {  //O si el puesto 3 esta ocupado por una ficha del mismo color
-		marcarFicha(casilla[i].fichasPuesto4, casilla[i].puesto4)
+	else if (casilla[i].fichasEnPuesto[3].length === 0 ||  ////Si no hay ninguna ficha en el puesto 4
+	casilla[i].puesto[3].style.backgroundColor === jugador.color) {  //O si el puesto 3 esta ocupado por una ficha del mismo color
+		marcarFicha(casilla[i].fichasEnPuesto[3], casilla[i].puesto[3])
 	} 
 
 }
@@ -224,14 +216,11 @@ function obtenerCasillas() {
 
 	const obtenerCasillaBlanca = (e, i, arr) => {						//callbacks para 'forEach()' 
 		arr[i].numeroCasilla = document.getElementById("casilla" + (i + 1))
-		arr[i].puesto1 = document.getElementById("puesto1-" + (i + 1))
-		arr[i].puesto2 = document.getElementById("puesto2-" + (i + 1))	//almacena una casilla blanca i
-		arr[i].puesto3 = document.getElementById("puesto3-" + (i + 1))	//en un arreglo
-		arr[i].puesto4 = document.getElementById("puesto4-" + (i + 1))
-		arr[i].fichasPuesto1 = []
-		arr[i].fichasPuesto2 = []
-		arr[i].fichasPuesto3 = []
-		arr[i].fichasPuesto4 = []
+		arr[i].puesto = [document.getElementById("puesto1-" + (i + 1)),
+		document.getElementById("puesto2-" + (i + 1)),	
+		document.getElementById("puesto3-" + (i + 1)),	
+		document.getElementById("puesto4-" + (i + 1))],
+		arr[i].fichasEnPuesto = [[], [], [], []]
 	}
 
 	const obtenerCasillaA = (e, i, arr) => {
