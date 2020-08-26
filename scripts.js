@@ -60,7 +60,7 @@ const jugadorVerde = {
 const dado = document.getElementById("dado")
 const botonJugar = document.getElementById("BotonInicio")
 let posDado = true		//valor de referencia para hacer girar el dado de izquierda a derecha
-let turno = 1		//referencia para establecer a quien le toca jugar
+let turno = [jugadorAzul, jugadorAmarillo, jugadorRojo, jugadorVerde]		//referencia para establecer a quien le toca jugar
 
 obtenerCasillas()	//funcion que llena los arreglos con los elmentos HTML casillas 	
 
@@ -90,22 +90,11 @@ function deshabilitarDado() {
 function jugar() {
 
 	let tirada = tirarDado() //regresa el valor de la tirada (entre 1 y 6)
+	let jugador = turno.shift()
 
-	switch (turno) {	//habilitado para que solo juegue el jugador azul	
-		case 1:
-			habilitarFichas(jugadorAzul)
-			break;
-		case 2:
-			habilitarFichas(jugadorAmarillo)
-			break;
-		case 3:
-			habilitarFichas(jugadorRojo)
-			break;
-		case 4:
-			habilitarFichas(jugadorVerde)
-			break;		
-	}
-	
+	//habilitado para que solo juegue el jugador azul	
+	turno.unshift(jugador) //cambiar el metodo a 'push' para habilitar los turnos
+	habilitarFichas(jugador)
 
 }
 
@@ -134,10 +123,7 @@ function habilitarFichas(jugador) {
 	const sacarFicha = (ficha) => {
 
 		ficha.classList.add('hidden')	//se oculta la ficha que se paso como parametro
-		jugador.ficha[0].removeEventListener('click', habilitar[0])
-		jugador.ficha[1].removeEventListener('click', habilitar[1])		//se anula el listerner 
-		jugador.ficha[2].removeEventListener('click', habilitar[2])		//de todas las fichas
-		jugador.ficha[3].removeEventListener('click', habilitar[3])
+		jugador.ficha.forEach((e, i) => e.removeEventListener('click', habilitar[i]))	//se anulan los listeners de todas las fichas
 		ponerFicha(jugador, jugador.salida, ficha)		//funcion que marca la ficha en la posicion de salida del jugador de turno
 
 	}
@@ -149,10 +135,7 @@ function habilitarFichas(jugador) {
 		() => sacarFicha(jugador.ficha[3])
 	] 
 
-	jugador.ficha[0].addEventListener('click', habilitar[0])
-	jugador.ficha[1].addEventListener('click', habilitar[1])		//se habilitan las funciones 
-	jugador.ficha[2].addEventListener('click', habilitar[2])		//al darle click a las fichas
-	jugador.ficha[3].addEventListener('click', habilitar[3])
+	jugador.ficha.forEach((e, i) => e.addEventListener('click', habilitar[i]))	//se habilitan las funciones al darle click a las fichas
 
 }
 
