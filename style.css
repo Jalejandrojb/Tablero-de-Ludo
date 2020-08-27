@@ -44,7 +44,7 @@ body {
 
 }
 
-.respanw_amarillo {
+.respawn_amarillo {
 	height: 50px;
 	width: 50px;
 	border-style: solid;
@@ -84,7 +84,7 @@ body {
 	
 }
 
-.respanw_rojo {
+.respawn_rojo {
 	height: 50px;
 	width: 50px;
 	border-style: solid;
@@ -122,7 +122,7 @@ body {
 	
 }
 
-.respanw_azul {
+.respawn_azul {
 	height: 50px;
 	width: 50px;
 	border-style: solid;
@@ -161,7 +161,7 @@ body {
 	
 }
 
-.respanw_verde {
+.respawn_verde {
 	height: 50px;
 	width: 50px;
 	border-style: solid;
@@ -457,8 +457,8 @@ body {
 	line-height: 2.2;
 }
 
-.colorrr {
-	background-color: red;
+.hidden {
+	visibility: hidden;
 }
 
 
